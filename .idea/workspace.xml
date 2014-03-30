@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d058b59-7d61-48a8-b6cb-e2ecf33c8c86" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="reconectese.iws" />
@@ -31,7 +32,7 @@
       <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="55" selection-start="201" selection-end="201" vertical-scroll-proportion="0.28125" vertical-offset="0" max-vertical-offset="480">
+            <state line="25" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.78125" vertical-offset="0" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -245,7 +246,11 @@
       <created>1396203424727</created>
       <updated>1396203424728</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Creacion del projecto&#10;">
+      <created>1396203486206</created>
+      <updated>1396203486206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -287,7 +292,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="55" selection-start="201" selection-end="201" vertical-scroll-proportion="0.28125" vertical-offset="0" max-vertical-offset="480">
+        <state line="25" column="0" selection-start="435" selection-end="435" vertical-scroll-proportion="0.78125" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
