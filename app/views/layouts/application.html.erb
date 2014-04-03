@@ -8,6 +8,7 @@
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -18,5 +19,7 @@
        <%= render 'layouts/messages' %>
        <%= yield %>
     </main>
+
+
   </body>
 </html>
