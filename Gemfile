@@ -11,7 +11,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 
-gem 'foundation-rails'
+gem 'compass-rails'
+gem 'zurb-foundation'
+
 gem 'activerecord-tableless'
 gem 'figaro'
 gem 'gibbon'
