@@ -8,7 +8,6 @@
     <%# Modernizr is required for Zurb Foundation %>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -20,6 +19,17 @@
        <%= yield %>
     </main>
 
+    <script type="text/javascript" >
+        /*For photo Gallery*/
+        $(document).ready(function() {
+            $("a[data-link^='prettyPhoto']").prettyPhoto({
+                show_title : false, /* true/false */
+                social_tools : false,
+                hook : "data-link",
+                overlay_gallery : false,
+            });
+        });
+    </script>
 
   </body>
 </html>
