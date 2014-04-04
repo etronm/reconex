@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Reconectese" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Reconectese" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%# Modernizr is required for Zurb Foundation %>
-    <%= javascript_include_tag "vendor/custom.modernizr" %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Reconectese" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Reconectese" %>">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%# Modernizr is required for Zurb Foundation %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<!-- Start: Wrapper -->
+<div class="wrapper">
 
-    <script type="text/javascript" >
-        /*For photo Gallery*/
-        $(document).ready(function() {
-            $("a[data-link^='prettyPhoto']").prettyPhoto({
-                show_title : false, /* true/false */
-                social_tools : false,
-                hook : "data-link",
-                overlay_gallery : false,
-            });
+  <header id="header">
+    <div class="row">
+        <%= render 'layouts/navigation' %>
+    </div>
+  </header>
+  <main role="main">
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+  </main>
+</div>
+
+<script type="text/javascript">
+    /*For photo Gallery*/
+    $(document).ready(function () {
+        $("a[data-link^='prettyPhoto']").prettyPhoto({
+            show_title: false, /* true/false */
+            social_tools: false,
+            hook: "data-link",
+            overlay_gallery: false,
         });
-    </script>
+    });
+</script>
 
-  </body>
+</body>
 </html>

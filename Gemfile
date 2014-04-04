@@ -19,6 +19,9 @@ gem 'figaro'
 gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form'
+
+gem 'font-awesome-rails'
+
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'

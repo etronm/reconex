@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require foundation
 //= require_tree .
 //= require custom
 //= require vendor/jquery.prettyPhoto
