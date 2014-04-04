@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 1.2'
 
 
 gem 'compass-rails'
-gem 'zurb-foundation'
+gem 'zurb-foundation' , '= 4.2.0'
 
 gem 'activerecord-tableless'
 gem 'figaro'
