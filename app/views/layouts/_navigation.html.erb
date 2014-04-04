@@ -1,19 +1,14 @@
 <%# navigation styled for Zurb Foundation 4 %>
-<nav class="top-bar">
-
-  <ul class="title-area">
-
-    <li class="name">
-      <h1><a href="index.html" class="logo"><i class="fa fa-html5"></i> Ultimate<span>Foundation</span></a>
-      </h1>
-    </li>
-    <li class="toggle-topbar"><a href="#"><i class="icon-reorder"></i></a></li>
-    <!--li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li-->
-  </ul>
-
-  <div class="top-bar-section">
-    <ul class="right">
-      <%= render 'layouts/navigation_links' %>
+<div class="row">
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="index.html" class="logo"><i class="icon-html5"></i> Ultimate<span>Foundation</span></a></h1>
+      </li>
+      <li class="toggle-topbar"><a href="#"><i class="icon-reorder"></i></a></li>
     </ul>
-  </div>
-</nav>
+    <section class="top-bar-section">
+      <%= render 'layouts/navigation_links' %>
+    </section>
+  </nav>
+</div>

@@ -20,7 +20,7 @@ gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form'
 
-gem 'font-awesome-rails'
+gem 'font-awesome-rails', '~> 3.2.1.0'
 
 group :development do
   gem 'better_errors'
