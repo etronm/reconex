@@ -1,11 +1,118 @@
-<% content_for :title do %>Contact<% end %>
-<h3>Contact</h3>
-<div class="form" >
-  <%= simple_form_for @contact do |form| %>
-      <%= form.error_notification %>
-      <%= form.input :name, autofocus: true %>
-      <%= form.input :email %>
-      <%= form.input :content, as: :text %>
-      <%= form.button :submit, 'Submit', class: 'submit' %>
-  <% end %>
+<% content_for :title do %>Contactanos
+<% end %>
+<% content_for :description do %>Envianos cualquier comentario
+<% end %>
+<%= render 'layouts/title', icono:"icon-envelope", titulo:"Contactanos" %>
+
+<div class="row">
+  <section class="small-12 large-8 column">
+    <!-- starts: Google Maps -->
+    <div class="gmapfixed_block">
+      <div id="googlemaps-container-top"></div>
+      <div id="googlemaps" class="google-map google-map-full"></div>
+      <div id="googlemaps-container-bottom"></div>
+    </div>
+    <!-- end: Google Maps -->
+  </section>
+  <aside class="small-12 large-4 column">
+    <div class="widget">
+      <h4>Direccion</h4>
+      <address>
+        <ul class="list-unstyled">
+          <li> <i class="icon-home"></i>Casa del escarabajo y mariposa,
+            PO Box 6630,
+            Bayamon, PR
+            00960
+          </li>
+          <li> <i class="icon-envelope-alt"></i><a href="mailto:enrique.tron@gmail.com">enrique.tron@gmail.com </a></li>
+          <li> <i class="icon-phone-sign"></i>1(222) 5x86 x97x </li>
+        </ul>
+      </address>
+    </div>
+    <div class="widget">
+
+      <div class="form" >
+        <h4>Contact us</h4>
+        <%= simple_form_for @contact do |form| %>
+            <%= form.error_notification %>
+            <%= form.input :name, autofocus: true %>
+            <%= form.input :email %>
+            <%= form.input :content, as: :text %>
+            <%= form.button :submit, 'Submit', class: 'submit' %>
+        <% end %>
+      </div>
+
+      <!--form class="contactform">
+        <div class="item item-pair">
+          <label for="FullName">Full Name
+            <input type="text" name="FullName" id="FullName" class="cat_textbox" maxlength="255">
+          </label>
+          <label for="EmailAddress">Email Address
+            <input type="text" name="EmailAddress" id="EmailAddress" class="cat_textbox" maxlength="255">
+          </label>
+        </div>
+        <div class="item">
+          <label for="Website">Website
+            <input type="text" name="Website" id="Website" class="cat_textbox" maxlength="255">
+          </label>
+        </div>
+        <div class="item">
+          <label>Comments</label>
+          <textarea cols="10" rows="4" class="cat_listbox"></textarea>
+        </div>
+        <div class="item">
+          <input class="button small" type="submit" value="Submit" id="catwebformbutton">
+        </div>
+      </form-->
+    </div>
+
+  </aside>
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="vendor/jquery.js"><\/script>')
+</script>
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<%= javascript_include_tag "vendor/jquery.gmap.min" %>
+<script type="text/javascript">
+    /* for Google map */
+
+    $(window).load(function() {
+        LoadGmaps();
+    });
+
+    /* Add Your Company Name latitude and  longitude here.
+     * for latitude and longitude please check http://itouchmap.com/latlong.html
+     *  */
+    var latitude = "18.393186";
+    var longitude = "-66.155249";
+    var details = "Beetle Inc - Bayamon, Puerto Rico";
+
+    function LoadGmaps() {
+        var myLatlng = new google.maps.LatLng(latitude, longitude);
+        var myOptions = {
+            zoom : 12,
+            scrollwheel : true,
+            center : myLatlng,
+            navigationControl : true,
+            mapTypeId : google.maps.MapTypeId.ROADMAP
+        }
+
+        var map = new google.maps.Map(document.getElementById("googlemaps"), myOptions);
+        var marker = new google.maps.Marker({
+            position : myLatlng,
+            map : map,
+            icon : '<%= image_path('map_icon.png') %>'
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content : details
+        });
+        google.maps.event.addListener(marker, "click", function() {
+            infowindow.open(map, marker);
+
+        });
+
+    }
+
+</script>
