@@ -4,7 +4,7 @@
     <data-source source="LOCAL" name="Rails reconectese: development" uuid="2394e5bc-7bab-41b6-8b15-978248928313">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:reconx</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/reconx</jdbc-url>
       <user-name>etm</user-name>
       <user-password>dfcfdfdedfc7</user-password>
       <libraries />
@@ -12,7 +12,7 @@
     <data-source source="LOCAL" name="Rails reconectese: test" uuid="01fe88c5-bc16-441e-9ed2-489c6dea94e1">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:example_test</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/example_test</jdbc-url>
       <user-name>etm</user-name>
       <user-password>dfcfdfdedfc7</user-password>
       <libraries />
@@ -20,7 +20,7 @@
     <data-source source="LOCAL" name="Rails reconectese: production" uuid="1613fd75-bcda-4069-aa34-7e35974b3b06">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:example_production</jdbc-url>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/example_production</jdbc-url>
       <user-name>etm</user-name>
       <user-password>dfcfdfdedfc7</user-password>
       <libraries />

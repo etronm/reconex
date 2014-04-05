@@ -28,5 +28,6 @@ group :development do
   gem 'better_errors'
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'annotate', ">=2.6.0"
 end
 

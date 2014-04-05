@@ -7,6 +7,8 @@ default: &default
   pool: 5
   username: etm
   password: etm
+  host: localhost
+  port: 5432
 
 development:
   <<: *default
