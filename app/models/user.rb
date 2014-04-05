@@ -14,4 +14,8 @@
 #
 
 class User < ActiveRecord::Base
+
+  #attr_accessible :userid, :name, :email, :phone, :password, :cpassword
+  # etm: esto ya no se permite, ahora va en eel controller
+
 end

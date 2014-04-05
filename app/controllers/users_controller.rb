@@ -14,8 +14,11 @@ class UsersController < ApplicationController
       render :new
     end
   end
+
   private
+
   def secure_params
-    params.require(:contact).permit(:name, :email, :phone)
+    params.require(:user).permit(:userid, :name, :email, :phone, :password, :cpassword)
   end
+
 end
