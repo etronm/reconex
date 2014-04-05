@@ -16,6 +16,7 @@
 //= require_tree .
 //= require custom
 //= require vendor/jquery.prettyPhoto
+//= require vendor/foundation.min.js
 
 $(function() {
   $(document).foundation();

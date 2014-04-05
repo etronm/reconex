@@ -1,20 +1,25 @@
-<% content_for :title do %>Foobar Kadigan<% end %>
-<% content_for :description do %>Website of Foobar Kadigan<% end %>
-<section>
-  <%= image_tag "uig.jpg" %>
-</section>
-<section>
-  <div class="column">
-    <h2>Stay in touch.</h2>
-  </div>
-  <div class="column">
-    <div class="form-centered">
-      <%= simple_form_for @visitor do |f| %>
-          <%= f.error_notification %>
-          <%= f.input :email, label: false, :placeholder => 'Your email address...' %>
-          <br/>
-          <%= f.button :submit, "Sign up for the newsletter", :class => "submit" %>
-      <% end %>
+<% content_for :title do %>Conectese en su vida
+<% end %>
+<% content_for :description do %>This is our home
+<% end %>
+
+<% xt = "el titulo" %>
+<%= render 'layouts/title', icono:"icon-envelope", titulo:"Manten el contacto" %>
+
+<div class="row">
+  <section>
+    <div class="column">
+      <h2>Stay in touch.</h2>
     </div>
-  </div>
-</section>
+    <div class="column">
+      <div class="form-centered">
+        <%= simple_form_for @visitor do |f| %>
+            <%= f.error_notification %>
+            <%= f.input :email, label: false, :placeholder => 'Your email address...' %>
+            <br/>
+            <%= f.button :submit, "Sign up for the newsletter", :class => "submit" %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+</div>
