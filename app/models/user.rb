@@ -1,9 +1,12 @@
 class User < ActiveRecord::Base
   has_no_table
 
+  column :userid, :string
   column :name, :string
   column :email, :string
   column :phone, :string
+  column :password, :string
+  column :cpassword, :string
 
   validates_presence_of :name
   validates_presence_of :email
