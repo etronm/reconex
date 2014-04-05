@@ -1,16 +1,28 @@
 <%# add navigation links to this file %>
 <ul class="right">
   <li class="active"><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Quienes somos', page_path('about') %></li>
+  <li><%= link_to 'Nosotros', page_path('about') %></li>
   <li><%= link_to 'Contacto', new_contact_path %></li>
+
+  <li class="has-dropdown"><a href="#">Acceso</a>
+    <ul class="dropdown">
+      <li><a href="login.html">Login</a></li>
+      <li><a href="forgot-password.html">Forgot Password</a></li>
+      <li><a href="registration.html">Registration</a></li>
+      <li><%= link_to 'Registro', page_path('registration') %></li>
+    </ul>
+  </li>
+
   <li><a href="services.html">Servicios</a></li>
-  <li class="has-dropdown"><a href="#">Portafolio</a>
+
+  <!--li class="has-dropdown"><a href="#">Portafolio</a>
     <ul class="dropdown">
       <li><a href="portfolio2.html">portafolio 2 col</a></li>
       <li><a href="portfolio3.html">portafolio 3 col</a></li>
       <li><a href="portfolio4.html">portafolio 4 col</a></li>
     </ul>
-  </li>
+  </li-->
+
   <li><a href="blog.html">Blog</a></li>
   <li class="has-dropdown"><a href="#">Extras </a>
     <ul class="dropdown">
@@ -22,9 +34,6 @@
       <li><a href="gallery-video.html">Video Gallery</a></li>
       <li><a href="price-table.html">Price List</a></li>
       <li><a href="testimonials.html">Testimonials</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="forgot-password.html">Forgot Password</a></li>
-      <li><a href="registration.html">Registration</a></li>
       <li><a href="quote.html">Request a Quote</a></li>
       <li><a href="faq.html">FAQ</a></li>
       <li><a href="icons.html">Buttons and Icons</a></li>
