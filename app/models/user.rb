@@ -14,9 +14,7 @@
 #
 
 class User < ActiveRecord::Base
-
-  #attr_accessible :userid, :name, :email, :phone, :password, :cpassword
-  # etm: esto ya no se permite, ahora va en eel controller
+  before_save { self.email = email.downcase }
 
   validates :userid, presence: true,length: { maximum: 20 }
   validates :name, presence: true, length: { maximum: 50 }
