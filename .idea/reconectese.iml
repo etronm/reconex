@@ -175,6 +175,7 @@
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v2.2.1, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.39, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.5.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="validates_phone_number (v2.0.1, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.0.7, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v2.0.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zurb-foundation (v4.2.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />

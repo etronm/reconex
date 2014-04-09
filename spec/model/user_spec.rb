@@ -3,29 +3,19 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", phone: "3434", userid: "etronm")
+    @user = User.new(name: "Example User", email: "user@example.com", phone: "7876133333", user_type:3)
   end
 
   subject { @user }
 
-  it { should respond_to(:userid) }
   it { should respond_to(:name) }
   it { should respond_to(:email) }
+  it { should respond_to(:user_type) }
+
 
   it { should be_valid }
 
-=begin
-  it "should respond to 'name'" do
-    expect(@user).to respond_to(:name)
-  end
-  it "should respond to 'email'" do
-    expect(@user).to respond_to(:email)
-  end
-  it "should respond to 'phone'" do
-    expect(@user).to respond_to(:phone)
-  end
-=end
-
+  ############ user name ####################################
   describe "when name is not present" do
     before { @user.name = " " }
     it { should_not be_valid }
@@ -36,6 +26,7 @@ describe User do
     it { should_not be_valid }
   end
 
+  ############### email ###################################
   describe "when email format is invalid" do
     it "should be invalid" do
       addresses = %w[user@foo,com user_at_foo.org example.user@foo.
@@ -63,8 +54,15 @@ describe User do
       user_with_same_email.email = @user.email.upcase
       user_with_same_email.save
     end
-
     it { should_not be_valid }
   end
 
+  ############ user type ####################################
+  describe "when user_type  is not valid " do
+    before { @user.user_type = 4 }
+    it { should_not be_valid }
+  end
+
+
 end
+
