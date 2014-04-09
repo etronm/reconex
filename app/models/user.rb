@@ -18,4 +18,12 @@ class User < ActiveRecord::Base
   #attr_accessible :userid, :name, :email, :phone, :password, :cpassword
   # etm: esto ya no se permite, ahora va en eel controller
 
+  validates :userid, presence: true,length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 50 }
+
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, format: { with: VALID_EMAIL_REGEX } ,  uniqueness: { case_sensitive: false }
+
+  validates :phone, presence: true
+
 end
