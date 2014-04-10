@@ -4,7 +4,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com", phone: "7876133333",
-        user_type:3, password_plain:"etm", password_confirmation:"etm")
+        user_type:3, password:"etronm1", password_confirmation:"etronm1")
   end
 
   subject { @user }
@@ -12,7 +12,7 @@ describe User do
   it { should respond_to(:name) }
   it { should respond_to(:email) }
   it { should respond_to(:user_type) }
-  it { should respond_to(:password_plain) }
+  it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
 
@@ -72,7 +72,7 @@ describe User do
   describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
-                       password_plain: " ", password_confirmation: " ")
+             password: " ", password_confirmation: " ")
     end
     it { should_not be_valid }
   end
@@ -87,7 +87,7 @@ describe User do
     let(:found_user) { User.find_by(email: @user.email) }
 
     describe "with valid password" do
-      it { should eq found_user.authenticate(@user.password_plain) }
+      it { should eq found_user.authenticate(@user.password) }
     end
 
     describe "with invalid password" do
@@ -97,11 +97,14 @@ describe User do
       specify { expect(user_for_invalid_password).to be_false }
     end
   end
+
   describe "with a password that's too short" do
-    before { @user.password_plain = @user.password_confirmation = "a" * 5 }
+    before { @user.password = @user.password_confirmation = "a" * 5 }
     it { should be_invalid }
   end
 
 
 end
+
+
 

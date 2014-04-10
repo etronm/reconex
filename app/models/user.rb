@@ -2,14 +2,14 @@
 #
 # Table name: users
 #
-#  id         :integer          not null, primary key
-#  email      :string(255)
-#  name       :string(255)
-#  phone      :string(255)
-#  password   :string(255)
-#  user_type  :integer
-#  created_at :datetime
-#  updated_at :datetime
+#  id              :integer          not null, primary key
+#  email           :string(255)
+#  name            :string(255)
+#  phone           :string(255)
+#  password_digest :string(255)
+#  user_type       :integer
+#  created_at      :datetime
+#  updated_at      :datetime
 #
 
 class User < ActiveRecord::Base
@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
   validates :phone, presence: true, :phone_number => true
   validates :user_type, presence: true, numericality: { only_integer: true }, inclusion: 0..3
 
-  #has_secure_password
+  has_secure_password
   validates :password, length: { minimum: 6 }
 
 end
