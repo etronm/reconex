@@ -22,4 +22,7 @@ class User < ActiveRecord::Base
   validates :phone, presence: true, :phone_number => true
   validates :user_type, presence: true, numericality: { only_integer: true }, inclusion: 0..3
 
+  #has_secure_password
+  validates :password, length: { minimum: 6 }
+
 end

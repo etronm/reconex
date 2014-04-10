@@ -22,6 +22,7 @@ gem 'gibbon'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'validates_phone_number', '~> 2.0.1'
+gem 'bcrypt-ruby', '3.1.2'
 
 
 group :development do
