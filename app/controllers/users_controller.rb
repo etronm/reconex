@@ -5,14 +5,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(secure_params)
-    if @user.valid?
+    if @user.save
       #@user.update_spreadsheet
       #UserMailer.contact_email(@contact).deliver
 
-      flash[:notice] = "Your information is valid!!! #{@user.name}."
+      flash[:notice] = "Se ha registrado su usuario exitosamente #{@user.name}!!!! ."
       #redirect_to root_path
+      redirect_to @user
     else
-      flash[:error] = "Your information is NOT valid!!! #{@user.errors}."
+      flash[:error] = "Your information is NOT valid!!! #{@user.errors.full_messages}."
       render :new
     end
   end
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   private
 
   def secure_params
-    params.require(:user).permit(:name, :email, :phone, :password, :password_confirm)
+    params.require(:user).permit(:name, :email, :phone, :password, :password_confirmation, :user_type)
   end
 
 end

@@ -37,18 +37,20 @@
             <div class="clearfix">
               <div class="input">
                 <!--input id="isignup_conf_password" tabindex="7" name="confirmpassword" type="password" placeholder="Confirm Password" required=""/-->
-                <%= form.input :password_confirmation, password_field: true, label:"Confirm Password", placeholder: 'Please confirm your password' %>
+                <%= form.input :password_confirmation, password_field: true, label:"Confirmation", placeholder: 'Please confirm your password' %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
                 <!--input id="isignup_email" tabindex="5" name="email" type="email" placeholder="email"  required=""  /-->
                 <%= form.input :phone , required: false%>
+                <%= form.input :user_type , hidden_field:true, value:"0"%>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
                 <ul class="inputs-list list-unstyled">
+
                   <li>
                     <label>
                       <input id="ch" tabindex="8" type="checkbox" name="remember" value="1" checked="checked" required=""/>
