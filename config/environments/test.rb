@@ -33,4 +33,9 @@ Reconectese::Application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
+
+
+  # etron, 2014 */*******************************************************************************
+  # Speed up tests by lowering bcrypt's cost function.
+  ActiveModel::SecurePassword.min_cost = true
 end
