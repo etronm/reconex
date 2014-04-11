@@ -27,6 +27,7 @@ Reconectese::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # etron, 2014 */*******************************************************************************
   config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
       port: 587,
