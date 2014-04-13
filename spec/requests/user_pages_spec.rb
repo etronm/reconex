@@ -38,7 +38,9 @@ describe "User pages" do
         fill_in "Password", with: "foobar"
         fill_in "Confirmation", with: "foobar"
         fill_in "Phone", with: "7876199877"
-        fill_in "User type", with: 0
+
+        #hidden fields has to be filled manually, etron
+        find(:xpath, "//input[@id='user_user_type']").set "0"
       end
 
       it "should create a user" do

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       #redirect_to root_path
       redirect_to @user
     else
-      flash[:error] = "Your information is NOT valid!!! #{@user.errors.full_messages}."
+      flash[:error] = "Please validate your information!"
       render :new
     end
   end

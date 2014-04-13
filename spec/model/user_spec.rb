@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: "Example User", email: "user@example.com", phone: "7876133333",
+    @user = User.new(name: "Example User", email: "user@example.com", phone: "1234567890",
         user_type:3, password:"etronm1", password_confirmation:"etronm1")
   end
 
