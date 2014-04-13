@@ -18,12 +18,11 @@ describe "Static pages" do
     end
   end
 
-  describe "Root page" do
-
-    it "should have the content 'Aquitoy'" do
-      visit '/pages/intro.html'
-      expect(page).to have_content('Aquitoy')
-    end
-  end
+  #describe "Root page" do
+  #    it "should have the content 'Aquitoy'" do
+  #    visit '/pages/intro.html'
+  #    expect(page).to have_content('Aquitoy')
+  #  end
+  #end
 
 end
