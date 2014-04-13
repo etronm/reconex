@@ -24,6 +24,6 @@ doc/
 *~
 .project
 .DS_Store
-.idea
+.idea/
 bundler_stubs/
 d
