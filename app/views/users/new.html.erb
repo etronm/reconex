@@ -10,33 +10,33 @@
     <h3 class="aligncenter title">Registro de nuevos usuarios</h3>
 
     <div class="form">
-      <h4>Registrate</h4>
       <%= simple_form_for @user do |form| %>
-          <%= form.error_notification %>
           <fieldset>
+            <h4>Registra tu informacion</h4>
+            <%= render 'layouts/error_messages', object: form.object %>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :name %>
+                <%= form.input :name , error: false %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :email %>
+                <%= form.input :email , error: false %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :password, password_field: true , placeholder: 'Enter your password'%>
+                <%= form.input :password, password_field: true , placeholder: 'Enter your password', error: false %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :password_confirmation, password_field: true, label:"Confirmation", placeholder: 'Please confirm your password' %>
+                <%= form.input :password_confirmation, password_field: true, label:"Confirmation", placeholder: 'Please confirm your password' , error: false %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :phone , required: false%>
+                <%= form.input :phone , required: false , error: false %>
                 <%= form.hidden_field :user_type , value: '0' %>
               </div>
             </div>

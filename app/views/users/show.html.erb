@@ -1,49 +1,63 @@
 <div class="row">
   <% provide(:title, @user.name) %>
   <section class="small-12 large-8 column">
-    <div id="about">
-      <div class="title"><h3>Se ha registrado exitosamente <%= @user.name %>!</h3></div>
-      <p></p>
-      <p></p>
-      <%= @user.email %>
-      <%= gravatar_for @user %>
+    <div id="about" class="row">
+      <div class="title"><h3>Bienvenido a Reconecta tu vida <%= @user.name %>!</h3></div>
+      <div>
+        <%= @user.email %>
+        <%= gravatar_for @user %>
+      </div>
     </div>
-    <p></p>
-    <p></p>
+    <div class="row">
+      <p>
+        Ahora puedes navegar en el sistema con libertad, no olvides visitar nuestras secciones:
+      <li>Esta</li>
+      <li> y esta otra mas ....</li>
+      <%= link_to 'Home', root_path %>
+      </p>
+    </div>
   </section>
   <aside class="small-12 large-4 column ">
     <div class="experties  	widget">
       <h3>Our expertise</h3>
+
       <div class="exp-box">
         <h6>HTML5 / CSS3</h6>
+
         <div class="round progress success progress-striped active"><span class="meter" style="width: 90%"></span></div>
       </div>
       <div class="exp-box">
         <h6>Javascript</h6>
+
         <div class="round progress progress-striped active"><span class="meter" style="width: 85%"></span></div>
       </div>
       <div class="exp-box">
         <h6>Wordpress</h6>
+
         <div class="round progress success progress-striped active"><span class="meter" style="width: 92%"></span></div>
       </div>
       <div class="exp-box">
         <h6>Foundation 4</h6>
+
         <div class="round progress alert progress-striped active"><span class="meter" style="width: 95%"></span></div>
       </div>
       <div class="exp-box">
         <h6>Drupal</h6>
+
         <div class="round progress progress-striped active"><span class="meter" style="width: 80%"></span></div>
       </div>
       <div class="exp-box">
         <h6>Magento</h6>
+
         <div class="round progress progress-striped active"><span class="meter" style="width: 70%"></span></div>
       </div>
     </div>
 
     <div class="widget">
       <h3>Heading here</h3>
+
       <div class="flex-video">
-        <iframe src="http://player.vimeo.com/video/21762736" width="400" height="225"  ></iframe>
+        <iframe src="http://player.vimeo.com/video/21762736" width="400" height="225"></iframe>
       </div>
     </div>
   </aside>

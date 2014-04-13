@@ -6,14 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(secure_params)
     if @user.save
-      #@user.update_spreadsheet
-      #UserMailer.contact_email(@contact).deliver
-
-      flash[:notice] = "Se ha registrado su usuario exitosamente #{@user.name}!!!! ."
-      #redirect_to root_path
+      flash[:notice] = "Se ha registrado exitosamente!"
       redirect_to @user
     else
-      flash[:error] = "Please validate your information!"
+      flash[:error] = "Por favor verifique la informacion!"
       render :new
     end
   end
