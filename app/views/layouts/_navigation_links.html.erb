@@ -6,10 +6,11 @@
 
   <li class="has-dropdown"><a href="#">Acceso</a>
     <ul class="dropdown">
-      <li><a href="login.html">Login</a></li>
-      <li><a href="forgot-password.html">Forgot Password</a></li>
-      <li><a href="registration.html">Registration</a></li>
       <li><%= link_to 'Registro', new_user_path %></li>
+      <li><%= link_to 'Login', signin_path %></li>
+      <li><%= link_to 'Mi perfil', new_user_path %></li>
+      <li><a href="forgot-password.html">Forgot Password</a></li>
+      <li><%= link_to 'Log out', signout_path %></li>
     </ul>
   </li>
 
