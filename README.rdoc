@@ -1,9 +1,37 @@
-== README
+== RECONECTA TU VIDA
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es mi primer projecto en ROR, para aprender y crear un web site que permita integrar personas interesadas en una vida mas saludable, asi como el cultivo de la tierra y la sanacion a travez de sus frutos
 
-Things you may want to cover:
+Como esta es mi publicidad, dire que esta construida con:
+
+Para reconectese:
+
+-- Se compro un template en zurb foundation 4.3.2
+-- que utiliza font-awesome 3.2
+-- Creando rspec, con cucumber 
+>> queriendo utilizar lowdown para los user cases
+-- con una bd postgresql
+-- haciendo deployment en heroku
+
+el proyecto rails utiliza:
+
+gem 'compass-rails'
+gem 'zurb-foundation' , '= 4.2.0'
+
+gem 'activerecord-tableless'
+gem 'figaro'
+gem 'gibbon'
+gem 'high_voltage'
+gem 'simple_form'
+
+gem 'font-awesome-rails', '~> 3.2.1.0'
+
+/*****************
+tuve que instalar 
+pgadmin3,
+postgresl
+
+/*****************/*****************/*****************/*****************/*********/*****************/*****************/*****************/*****************/*********/*****************/*****************/*****************/*****************/*********/*****************/*****************/*****************/*****************/*****************
 
 * Ruby version
 
