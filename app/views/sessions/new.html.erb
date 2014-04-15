@@ -10,7 +10,6 @@
     <h3 class="aligncenter title">Login</h3>
 
     <div class="form">
-      <!--form action="/signin" method="post" class="form-stacked"-->
       <%= simple_form_for(:session, url:sessions_path) do |form| %>
           <fieldset>
             <div class="clearfix">
@@ -38,7 +37,7 @@
               <p class="reset">Recover your
                 <a href="forgot-password.html" title="Recover your username or password">username or password</a></p>
 
-              <p class="reset"><a href="registration.html"> New member registration</a></p>
+              <p class="reset">New user? <%= link_to "Sign up now!", signup_path %></p>
             </div>
             <div class="actions">
               <%= form.button :submit, 'Login', class: 'submit' %>
