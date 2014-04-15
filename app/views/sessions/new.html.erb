@@ -10,7 +10,6 @@
     <h3 class="aligncenter title">Login</h3>
 
     <div class="form">
-      <%#= simple_form_for(:session, url:sessions_path) do |form| %>
       <%= simple_form_for(@session) do |form| %>
           <fieldset>
             <%= render 'layouts/error_messages', object: form.object %>
