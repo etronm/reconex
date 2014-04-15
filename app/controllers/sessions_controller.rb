@@ -1,22 +1,26 @@
 class SessionsController < ApplicationController
 
   def new
+    @session = Session.new
   end
 
   def create
-
-    render 'new'
+    @session = Session.new(secure_params)
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      #algo
-      flash[:success] = 'Felicidades!'
+      flash[:notice] = "Bienvenido #{user.name}!"
+      redirect_to root_path
     else
-      flash[:error] = 'Invalid email/password combination'
-      render new
+      @session.no_match
+      render 'new'
     end
   end
 
   def destroy
+  end
+
+  def secure_params
+    params.require(:session).permit(:name, :email)
   end
 
 end
