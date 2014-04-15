@@ -123,6 +123,7 @@
     <orderEntry type="library" scope="PROVIDED" name="formatador (v0.2.4, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fssm (v0.2.10, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="gibbon (v1.1.2, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="gmaps4rails (v2.1.2, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard (v2.6.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-rspec (v2.5.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-spork (v1.5.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
