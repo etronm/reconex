@@ -23,8 +23,7 @@ gem 'high_voltage'
 gem 'simple_form'
 gem 'validates_phone_number', '~> 2.0.1'
 gem 'bcrypt-ruby', '3.1.2'
-
-#gem 'gmaps4rails'
+gem 'jquery-turbolinks'
 
 group :development do
   gem 'better_errors'

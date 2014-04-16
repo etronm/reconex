@@ -12,21 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
 //= require custom
 //= require vendor/jquery.prettyPhoto
 //= require vendor/foundation.min.js
+//= require_tree .
 
-// require underscore
-// require gmaps/google
+$(function(){ $(document).foundation(); });
 
-// require contact
-// require vendor/jquery.gmap.min"
-// require 'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'
-// require "http://maps.google.com/maps/api/js?sensor=true"
+//= require jquery.turbolinks
+//= require turbolinks
 
-
-$(function() {
-  $(document).foundation();
-});
