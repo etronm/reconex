@@ -9,35 +9,32 @@
   <%= javascript_include_tag "vendor/custom.modernizr" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= yield :head %>
 </head>
 <body>
 <!-- Start: Wrapper -->
 <div class="wrapper">
+  <!-- Start: header -->
   <header id="header">
     <%= render 'layouts/navigation' %>
   </header>
+  <!-- End header -->
+  <!-- Start main  -->
   <main role="main">
     <%= render 'layouts/messages' %>
     <%= yield %>
   </main>
+  <!-- End  main  -->
   <!-- Start:Footer-->
   <footer>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
   </footer>
+  <!-- End :Footer-->
 </div>
-
-<script type="text/javascript">
-    /*For photo Gallery*/
-    $(document).ready(function () {
-        $("a[data-link^='prettyPhoto']").prettyPhoto({
-            show_title: false, /* true/false */
-            social_tools: false,
-            hook: "data-link",
-            overlay_gallery: false,
-        });
-    });
-</script>
-
+<!-- End Wrapper -->
+<!-- Start footer javascript -->
+<%= yield :foot %>
+<!-- End footer javascript -->
 </body>
 </html>
