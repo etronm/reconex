@@ -1,20 +1,20 @@
 <%# add navigation links to this file %>
 <ul class="right">
   <li class="active"><%= link_to 'Home', root_path %></li>
-  <li><%= link_to 'Nosotros', page_path('about') %></li>
-  <li><%= link_to 'Contacto', new_contact_path  %></li>
-
-  <li class="has-dropdown"><a href="#">Acceso</a>
-    <ul class="dropdown">
+  <% if signed_in? %>
+      <li class="has-dropdown"><a href="#">Mi Cuenta</a>
+        <ul class="dropdown">
+          <li><%= link_to 'Mi perfil', user_path(current_user) %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Log out', signout_path, method: "delete" %></li>
+        </ul>
+      </li>
+  <% else %>
       <li><%= link_to 'Registro', new_user_path %></li>
       <li><%= link_to 'Login', signin_path %></li>
-      <li><%= link_to 'Mi perfil', new_user_path %></li>
-      <li><a href="forgot-password.html">Forgot Password</a></li>
-      <li><%= link_to 'Log out', signout_path %></li>
-    </ul>
-  </li>
+  <% end %>
 
-  <li><a href="services.html">Servicios</a></li>
+  <li><%= link_to 'Contacto', new_contact_path %></li>
 
   <!--li class="has-dropdown"><a href="#">Portafolio</a>
     <ul class="dropdown">
@@ -24,9 +24,11 @@
     </ul>
   </li-->
 
-  <li><a href="blog.html">Blog</a></li>
   <li class="has-dropdown"><a href="#">Extras </a>
     <ul class="dropdown">
+      <li><a href="services.html">Servicios</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><%= link_to 'Nosotros', page_path('about') %></li>
       <li><a href="single-post.html">Single Post </a></li>
       <li><a href="project-details.html">Project Details </a></li>
       <li><a href="coming-soon.html">Coming Soon</a></li>
