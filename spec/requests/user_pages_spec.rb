@@ -63,7 +63,10 @@ describe "User pages" do
 
   describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
-    before { visit edit_user_path(user) }
+    before do
+      sign_in user
+      visit edit_user_path(user)
+    end
 
     describe "page" do
       it { should have_content("Actualiza tu perfil") }
@@ -85,6 +88,7 @@ describe "User pages" do
         fill_in "Email",            with: new_email
         fill_in "Password",         with: user.password
         fill_in "Confirmation",     with: user.password
+        fill_in "Phone", with: user.phone
         click_button "Guardar"
       end
 

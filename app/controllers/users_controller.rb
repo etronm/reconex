@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:edit, :update]
+
   def show
     @user = User.find(params[:id])
     #render :show
@@ -9,9 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(secure_params)
+    @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Se ha registrado exitosamente!"
+      flash[:success] = "Se ha registrado exitosamente!"
       redirect_to @user
     else
       flash[:error] = "Por favor verifique la informacion!"
@@ -25,8 +27,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(secure_params)
-      flash[:notice] = "Pefil actualizado!"
+    if @user.update_attributes(user_params)
+      flash[:success] = "Pefil actualizado!"
       sign_in @user
       redirect_to @user
     else
@@ -35,8 +37,12 @@ class UsersController < ApplicationController
   end
 
   private
-  def secure_params
+  def user_params
     params.require(:user).permit(:name, :email, :phone, :password, :password_confirmation, :user_type)
+  end
+
+  def signed_in_user
+    redirect_to signin_url, notice: "Por favor accese" unless signed_in?
   end
 
 end
