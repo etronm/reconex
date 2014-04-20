@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:index, :edit, :update]
   before_action :correct_user,   only: [:edit, :update]
 
+  #self.per_page = 10
+
   def show
     @user = User.find(params[:id])
   end

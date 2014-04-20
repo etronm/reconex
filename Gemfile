@@ -21,7 +21,7 @@ gem 'validates_phone_number', '~> 2.0.1'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'jquery-turbolinks'
 gem 'faker', '1.1.2'
-gem 'will_paginate', '3.0.4'
+gem 'will_paginate'
 
 
 group :development do
