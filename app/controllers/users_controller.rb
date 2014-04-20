@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+    #render :show
+  end
+
   def new
     @user = User.new
   end
@@ -14,13 +19,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-    #render :show
-  end
-
   def edit
     @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(secure_params)
+      flash[:notice] = "Pefil actualizado!"
+      sign_in @user
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -29,3 +40,4 @@ class UsersController < ApplicationController
   end
 
 end
+

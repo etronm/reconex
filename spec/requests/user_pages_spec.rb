@@ -51,7 +51,7 @@ describe "User pages" do
         before { click_button submit }
         let(:user) { User.find_by(email: 'user@example.com') }
 
-        #it { should have_link('Log out') }
+        #it { should have_link('Salir', href: signout_path) }
         it { should have_title(user.name) }
         #it { should have_selector('div.alert.alert-success', text: 'Welcome') }
       end
@@ -71,10 +71,28 @@ describe "User pages" do
       it { should have_link('Modificar', href: 'http://gravatar.com/emails') }
     end
 
-    describe "with invalid information" do
+    describe "with invalid information 2" do
       before { click_button "Guardar" }
 
       it { should have_content('error') }
+    end
+
+    describe "with valid information" do
+      let(:new_name)  { "Enriqueto2" }
+      let(:new_email) { "new@example.com" }
+      before do
+        fill_in "Name",             with: new_name
+        fill_in "Email",            with: new_email
+        fill_in "Password",         with: user.password
+        fill_in "Confirmation",     with: user.password
+        click_button "Guardar"
+      end
+
+      it { should have_title(new_name) }
+      #it { should have_selector('div.alert.alert-success') }
+      it { should have_link('Salir', href: signout_path) }
+      specify { expect(user.reload.name).to  eq new_name }
+      specify { expect(user.reload.email).to eq new_email }
     end
   end
 

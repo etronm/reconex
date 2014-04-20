@@ -5,8 +5,10 @@
       <li class="has-dropdown"><a href="#">Mi Cuenta</a>
         <ul class="dropdown">
           <li><%= link_to 'Mi perfil', user_path(current_user) %></li>
+          <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+
           <li class="divider"></li>
-          <li><%= link_to 'Log out', signout_path, method: "delete" %></li>
+          <li><%= link_to 'Salir', signout_path, method: "delete" %></li>
         </ul>
       </li>
   <% else %>
