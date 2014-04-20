@@ -4,6 +4,7 @@
 
 /* etron, 2014, para los comentarios */
 $grayMediumLight: #eaeaea;
+$grayLighter: #bbbbbb;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -62,3 +63,19 @@ aside {
   @extend .control-group;
   @extend .error;
 }
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
