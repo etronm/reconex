@@ -22,6 +22,9 @@ module SessionsHelper
   def signed_in?
     !current_user.nil?
   end
+  def is_admin?
+    current_user.admin?
+  end
 
   def sign_out
     current_user.update_attribute(:remember_token,

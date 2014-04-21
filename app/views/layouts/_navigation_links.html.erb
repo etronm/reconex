@@ -18,11 +18,13 @@
 
   <li><%= link_to 'Contacto', new_contact_path %></li>
 
+<% if signed_in? && is_admin?%>
   <li class="has-dropdown"><a href="#">Administracion</a>
     <ul class="dropdown">
       <li><%= link_to 'Usuarios', users_path %></li>
     </ul>
   </li>
+<% end %>
 
 
   <!--li class="has-dropdown"><a href="#">Portafolio</a>
