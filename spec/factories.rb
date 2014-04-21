@@ -9,6 +9,11 @@ FactoryGirl.define do
     password_confirmation "foobar"
     phone "1234563378"
     user_type 0
+
+    factory :admin do
+      user_type 3
+    end
+
   end
 
 

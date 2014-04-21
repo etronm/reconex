@@ -188,6 +188,7 @@
     <orderEntry type="library" scope="PROVIDED" name="validates_phone_number (v2.0.1, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket (v1.0.7, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="will_paginate (v3.0.5, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="will_paginate-foundation (v5.3.3, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="xpath (v2.0.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zurb-foundation (v4.2.0, RVM: ruby-2.1.1 [reconex]) [gem]" level="application" />
   </component>

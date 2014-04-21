@@ -4,7 +4,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com", phone: "1234567890",
-        user_type:3, password:"etronm1", password_confirmation:"etronm1")
+        user_type:0, password:"etronm1", password_confirmation:"etronm1")
   end
 
   subject { @user }
@@ -19,8 +19,18 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:remember_token) }
 
-
   it { should be_valid }
+  it { should_not be_admin }
+
+  describe "with admin attribute set to 'true'" do
+    before do
+      @user.save!
+      @user.user_type=3
+    end
+
+    it { should be_admin }
+  end
+
 
   ############ user name ####################################
   describe "when name is not present" do

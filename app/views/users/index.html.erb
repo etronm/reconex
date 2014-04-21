@@ -4,20 +4,19 @@
 <% end %>
 <%= render 'layouts/title', icono: "icon-bug", titulo: "Los usuaurios" %>
 
-<%= will_paginate %>
-<%#= will_paginate @users, renderer: FoundationPagination::Rails %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
-  <div class="small-12 large-6  column">
+  <div class="small-12 large-8  column">
+    <%= will_paginate @users, renderer: FoundationPagination::Rails %>
     <h3 class="aligncenter title">Usuaurio</h3>
     <ul class="users">
       <% @users.each do |user| %>
-          <%= render @users %>
+          <%= render user %>
       <% end %>
     </ul>
+    <%= will_paginate @users, renderer: FoundationPagination::Rails %>
   </div>
 </section>
 
-<%= will_paginate %>
 
