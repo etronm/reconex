@@ -1,3 +1,6 @@
+=begin
+
+=end
 # users
 #
 rails generate model User email:string name:string phone:string password:string user_type:integer

@@ -1,0 +1,41 @@
+<section id="recent-work">
+  <div class="row">
+    <h3 class="small-8 large-10 column">
+      Entradas recientes
+    </h3>
+
+    <div class="small-4 large-2 column">
+      <a href="#" class="button">Lee mas</a>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'layouts/main_recent_detail',
+          image: 'work/img_1.jpg',
+          alt:"Recent Work",
+          header:'Portfolio Item #1',
+          content:'Etiam porta sem malesuada magna mollis euismod.'
+    %>
+
+    <%= render 'layouts/main_recent_detail',
+              image:"work/img_2.jpg",
+              alt:"Recent Work",
+              header:'Portfolio Item #2',
+              content:'Etiam porta sem malesuada magna mollis euismod.'
+    %>
+
+    <%= render 'layouts/main_recent_detail',
+              image:"work/img_3.jpg",
+              alt:"Recent Work",
+              header:'Portfolio Item #3',
+              content:'Etiam porta sem malesuada magna mollis euismod.'
+    %>
+
+    <%= render 'layouts/main_recent_detail',
+              image:"work/img_4.jpg",
+              alt:"Recent Work",
+              header:'Portfolio Item #4',
+              content:'Etiam porta sem malesuada magna mollis euismod.'
+    %>
+
+  </div>
+</section>

@@ -1,73 +1,20 @@
 <% content_for :title do %>Reconecta tu vida<% end %>
-<!-- Start: Banner -->
 <div class="row">
   <p>Aquitoy</p>
 </div>
-<section id="banner">
+<%= render 'layouts/main_banner' %>
+<%= render 'layouts/main_features' %>
+<div  class="sub-headline aligncenter">
   <div class="row">
-    <div class="small-12 columns">
-      <ul data-orbit data-options="timer_speed:8000; navigation_arrows: false;bullets:true;  pause_on_hover: false; resume_on_mouseout: true;">
-        <li>
-          <div class="row slider-box">
-            <div class="slider-details small-12 large-7 columns">
-              <h2 class="custom-animated fadeInUpBig">Build with foundation 4</h2>
-              <h4 class="custom-animated fadeInUpBig">Sub heading goes here</h4>
-              <p class="custom-animated fadeInUpBig">  Porta ac consectetur ac, estibulum at eros. Donec sed odio dui. vestibulum at eros. Donec sed odio dui. Praesent commodo cursus magna. Donec sed odio dui. Praesent commodo cursus magna
-                <br /><a href="" class="button small">Read More</a>
-              </p>
-            </div>
-            <div class="slider-image small-12 large-5 columns custom-animated fadeInRightBig">
-              <!--img src="slider/foundation-4.png" alt="Build with foundation-4" /-->
-              <%= image_tag "slider/foundation-4.png", alt:"Build with foundation-4"  %>
-
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row slider-box">
-            <div class="slider-details small-12 large-7 columns">
-              <h2 class="custom-animated fadeInLeftBig">HTML 5</h2>
-              <h4 class="custom-animated fadeInLeftBig">Sub heading goes here</h4>
-              <p class="custom-animated fadeInLeftBig"> Porta ac consectetur estibulum at eros. Donec sed odio dui.estibulum at eros. Donec sed odio dui. ac, vestibulum at eros. Donec sed odio dui. Praesent commodo cursus magna. Donec sed odio dui. Praesent commodo cursus magna
-                <br /><a href="" class="button small">Read More</a>
-              </p>
-            </div>
-            <div class="slider-image small-12 large-5 columns custom-animated fadeInRightBig">
-              <%= image_tag "slider/html5.png", alt:"Build with HTML5"  %>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row slider-box">
-            <div class="slider-details small-12 large-7 columns custom-animated rotateInDownLeft">
-              <h2  >Build with CSS3</h2>
-              <h4  >Sub heading goes here</h4>
-              <p  > Porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.  Donec sed odio dui Praesent estibulum at eros. Donec sed odio dui. commodo cursus magna. Donec sed odio dui. Praesent commodo cursus magna
-                <br /><a href="" class="button small">Read More</a>
-              </p>
-            </div>
-            <div class="slider-image small-12 large-5 columns custom-animated rotateInUpRight">
-              <%= image_tag "slider/css3.png", alt:"Build with foundation-4"  %>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="row slider-box">
-            <div class="slider-details small-12 large-7 columns">
-              <h2 class="custom-animated fadeInUpBig">Fully Responsive </h2>
-              <h4 class="custom-animated fadeInUpBig">Sub heading goes here</h4>
-              <p class="custom-animated fadeInUpBig"> Porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Praesent commodo  sonec sed odio duicursus magna. Donec sed odio dui. Praesent commodo cursus magna
-                <br /><a href="" class="button small">Read More</a>
-              </p>
-            </div>
-            <div class="slider-image small-12 large-5 columns custom-animated fadeInUpBig">
-              <%= image_tag "slider/responsive.png", alt:"Build with foundation-4"  %>
-            </div>
-          </div>
-        </li>
-        <%= render 'layouts/introb' %>
-      </ul>
+    <div class="small-12">
+      <h3>
+        Lorem ipsum dolor sit has ei ipsum  amet, has ei ipsum scaevola am sea facilisis.
+      </h3>
+      <h5> Has ei ipsum scaevola deseruisse am sea facilisis.</h5>
+      <br />
+      <a href="quote.html" class="button  alert">Request Quote</a>
     </div>
   </div>
-</section>
-<!-- End: Banner -->
+</div>
+
+<%= render 'layouts/main_recent' %>

@@ -1,0 +1,61 @@
+<!-- Start: Banner -->
+<section id="banner">
+  <div class="row">
+    <div class="small-12 columns">
+      <ul data-orbit data-options="timer_speed:8000; navigation_arrows: false;bullets:true;  pause_on_hover: false; resume_on_mouseout: true;">
+        <%= render 'layouts/main_banner_detail',
+                   heading: 'Build with foundation 4444',
+                   sub_heading: 'Sub heading goes here',
+                   content: 'Porta ac consectetur ac, estibulum at eros. Donec sed odio dui. vestibulum at eros. Donec sed odio dui. Praesent commodo cursus magna. Donec sed odio dui. Praesent commodo cursus magna',
+                   reference: '#',
+                   image: 'slider/foundation-4.png',
+                   image_alt: "Build with foundation-4"
+        %>
+        <li>
+          <div class="row slider-box">
+            <div class="slider-details small-12 large-7 columns">
+              <h2 class="custom-animated fadeInLeftBig">HTML 5</h2>
+              <h4 class="custom-animated fadeInLeftBig">Sub heading goes here</h4>
+              <p class="custom-animated fadeInLeftBig"> Porta ac consectetur estibulum at eros. Donec sed odio dui.estibulum at eros. Donec sed odio dui. ac, vestibulum at eros. Donec sed odio dui. Praesent commodo cursus magna. Donec sed odio dui. Praesent commodo cursus magna
+                <br /><a href="" class="button small">Read More</a>
+              </p>
+            </div>
+            <div class="slider-image small-12 large-5 columns custom-animated fadeInRightBig">
+              <%= image_tag "slider/html5.png", alt:"Build with HTML5"  %>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row slider-box">
+            <div class="slider-details small-12 large-7 columns custom-animated rotateInDownLeft">
+              <h2  >Build with CSS3</h2>
+              <h4  >Sub heading goes here</h4>
+              <p  > Porta ac consectetur ac, vestibulum at eros. Donec sed odio dui.  Donec sed odio dui Praesent estibulum at eros. Donec sed odio dui. commodo cursus magna. Donec sed odio dui. Praesent commodo cursus magna
+                <br /><a href="" class="button small">Read More</a>
+              </p>
+            </div>
+            <div class="slider-image small-12 large-5 columns custom-animated rotateInUpRight">
+              <%= image_tag "slider/css3.png", alt:"Build with foundation-4"  %>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="row slider-box">
+            <div class="slider-details small-12 large-7 columns">
+              <h2 class="custom-animated fadeInUpBig">Fully Responsive </h2>
+              <h4 class="custom-animated fadeInUpBig">Sub heading goes here</h4>
+              <p class="custom-animated fadeInUpBig"> Porta ac consectetur ac, vestibulum at eros. Donec sed odio dui. Praesent commodo  sonec sed odio duicursus magna. Donec sed odio dui. Praesent commodo cursus magna
+                <br /><a href="" class="button small">Read More</a>
+              </p>
+            </div>
+            <div class="slider-image small-12 large-5 columns custom-animated fadeInUpBig">
+              <%= image_tag "slider/responsive.png", alt:"Build with foundation-4"  %>
+            </div>
+          </div>
+        </li>
+        <%= render 'layouts/introb' %>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- End: Banner -->
