@@ -1,0 +1,36 @@
+<% content_for :title do %>Seccion
+<% end %>
+<% content_for :description do %>Registro de secciones
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: "Secciones" %>
+
+<!-- Start:  section form -->
+<section class="row" id="sections">
+  <div class="small-12 large-4 large-offset-2 column">
+    <h3 class="aligncenter title">Registro de secciones nuevas</h3>
+
+    <div class="form">
+      <%= simple_form_for @section do |form| %>
+          <fieldset>
+            <%= render 'layouts/error_messages', object: form.object %>
+            <div class="clearfix">
+              <div class="input">
+                <%= form.input :name , error: false, label: "Nombre de la seccion" %>
+              </div>
+            </div>
+            <div class="clearfix">
+              <div class="input">
+                <%= form.input :description , error: false , label: "Descripcion" %>
+                <%= form.hidden_field :status , value: '0' %>
+              </div>
+            </div>
+            <div class="actions">
+              <%= form.button :submit, 'Guardar', class: 'submit' %>
+            </div>
+          </fieldset>
+      <% end %>
+    </div>
+
+  </div>
+
+</section>

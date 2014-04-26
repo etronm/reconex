@@ -20,7 +20,8 @@ module Reconectese
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.autoload_paths += %W( #{config.root}/app/models/security)
-
+    #config.autoload_paths += %W( #{config.root}/app/models/security)
+    #Dir["#{config.root}/app/models/**/*.rb"].each { |path| config.autoload_paths += [path] }
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**/}')]
   end
 end

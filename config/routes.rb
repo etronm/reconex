@@ -8,6 +8,8 @@ Reconectese::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
 
+  resources :sections
+
   root to: redirect('/pages/intro.html')
 
   match '/signup',  to: 'users#new', via: 'get'
