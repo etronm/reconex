@@ -12,7 +12,7 @@ describe "User pages" do
     end
 
     it { should have_title('Todos los usuarios') }
-    it { should have_content('Usuaurio') }
+    it { should have_content('Usuarios') }
 
     describe "pagination" do
 

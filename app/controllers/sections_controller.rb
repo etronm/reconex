@@ -27,7 +27,7 @@ class SectionsController< ApplicationController
 
   def index
     #@sections = Section.all
-    @sections = Section.paginate(page: params[:page], per_page: 10)
+    @sections = Section.paginate(page: params[:page], per_page: 10).order('name')
   end
 
   def create

@@ -2,15 +2,14 @@
 <% end %>
 <% content_for :description do %>Mantenimiento de usuarios
 <% end %>
-<%= render 'layouts/title', icono: "icon-bug", titulo: "Los usuaurios" %>
+<%= render 'layouts/title', icono: "icon-bug", titulo: "Usuarios" %>
 
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-8  column">
     <%= will_paginate @users, renderer: FoundationPagination::Rails %>
-    <h3 class="aligncenter title">Usuaurio</h3>
-    <ul class="users">
+    <ul class="listado">
       <% @users.each do |user| %>
           <%= render user %>
       <% end %>
