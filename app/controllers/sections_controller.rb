@@ -2,6 +2,16 @@ class SectionsController< ApplicationController
   before_action :signed_in_user, only: [:index, :edit, :update]
   before_action :admin_user, only: :destroy
 
+  def update
+    @section = Section.find(params[:id])
+    if @section.update_attributes(section_params)
+      flash[:success] = "Seccion actualizada!"
+      redirect_to sections_path
+    else
+      render 'edit'
+    end
+  end
+
   def destroy
     Section.find(params[:id]).destroy
     flash[:success] = "Se ha eliminado exitosamente!"

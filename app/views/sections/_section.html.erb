@@ -2,7 +2,7 @@
   <%= link_to section.name, section %>
   <p><%= section.description %>
     <% if current_user.admin? %>
-        <%= link_to '<i class="icon-trash"></i>'.html_safe, section, method: :delete, data: {confirm: "Seguro?"}, class: "right" %>
-    <% end %>
+        <%= create_delete_icon(section) %>
+  <% end %>
   </p>
 </li>
