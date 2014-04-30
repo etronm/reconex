@@ -17,6 +17,19 @@
       </p>
     </div>
   </section>
+
+  <section class="small-12 large-8 column">
+    <div class="span8">
+      <% if @user.articles.any? %>
+          <h3>Articulos(<%= @user.articles.count %>)</h3>
+          <ol class="articles">
+            <%= render @articles %>
+          </ol>
+          <%= will_paginate @articles %>
+      <% end %>
+    </div>
+  </section>
+
   <aside class="small-12 large-4 column ">
     <div class="experties  	widget">
       <h3>Our expertise</h3>
