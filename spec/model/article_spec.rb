@@ -18,9 +18,24 @@ describe Article do
   it { should respond_to(:status) }
 
   its(:user) { should eq user }
-
-
   it { should be_valid }
+
+  ############ user name ####################################
+  describe "when title is not present" do
+    before { @article.title = " " }
+    it { should_not be_valid }
+  end
+
+  describe "when title is too long" do
+    before { @article.title = "a" * 3001 }
+    it { should_not be_valid }
+  end
+
+  describe "when user_id is not present" do
+    before { @article.author_id = nil }
+    it { should_not be_valid }
+  end
+
 
   describe "when user_id is not present" do
     before { @article.author_id = nil }
