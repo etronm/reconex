@@ -1,0 +1,8 @@
+<li>
+  <%= link_to section.name, section %>
+  <p><%= section.description %>
+    <% if current_user.admin? %>
+        <%= create_delete_icon(section) %>
+  <% end %>
+  </p>
+</li>

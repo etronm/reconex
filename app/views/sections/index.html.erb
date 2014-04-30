@@ -1,0 +1,20 @@
+<% content_for :title do %>Todas las secciones
+<% end %>
+<% content_for :description do %>Mantenimiento de secciones
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: "Secciones" %>
+
+<!-- Start:  Login Form-->
+<section class="row" id="signup">
+  <div class="small-12 large-8  column">
+    <%= will_paginate @sections, renderer: FoundationPagination::Rails %>
+    <ul class="listado">
+      <% @sections.each do |section| %>
+        <%= render section%>
+      <% end %>
+    </ul>
+    <%= will_paginate @sections, renderer: FoundationPagination::Rails %>
+  </div>
+</section>
+
+<p>Gracias</p>

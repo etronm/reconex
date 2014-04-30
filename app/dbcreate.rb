@@ -7,10 +7,10 @@ rails generate model User email:string name:string phone:string password:string 
 # user = User.new(name: 'enrique', email: 'et@gg.com')
 
 --- validar si user tiene un numero int para utilizarlo como key
-Section id:int name:string  description:string
 
-Article id:int title:string description:string status:int author_id:int date_published:date banner_image:string 
-	comments_enabled:boolean views:int featured:boolean 
+Section name:string description:string
+
+Article title:string description:string status:int author_id:int date_published:date comments_enabled:boolean  featured:boolean views:int
 	
 ArticleSection id:int article_id:int section_id:int description:string status:int
 ArticleCategory category_id:int article_id:int 

@@ -1,0 +1,60 @@
+<% content_for :title do %>Seccion
+<% end %>
+<% content_for :description do %>Registro de secciones
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: "Secciones" %>
+
+<!-- Start:  Login Form-->
+<section class="row" id="signup">
+  <div class="small-12 large-4 large-offset-2 column">
+    <h3 class="aligncenter title">Registra una nueva seccion</h3>
+
+    <div class="form">
+      <%= simple_form_for @section do |form| %>
+          <fieldset>
+            <%= render 'layouts/error_messages', object: form.object %>
+            <div class="clearfix">
+              <div class="input">
+                <%= form.input :name , error: false, label: "Nombre" %>
+              </div>
+            </div>
+            <div class="clearfix">
+              <div class="input">
+                <%= form.input :description , error: false, label:"Descripcion" %>
+                <%= form.hidden_field :status , value: '0' %>
+              </div>
+            </div>
+            <div class="actions">
+              <%= form.button :submit, 'Guardar', class: 'submit' %>
+            </div>
+          </fieldset>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="small-12 large-4 column left">
+    <h3>Registrer Now !!!</h3>
+
+    <p> Lorem ipsum dolor sit amet, conafs
+      sectetur adipisicing elit, sed dofrt
+      Eiusmod tempor.Dolor sit amet, conafs
+      sectetur adipisicing elit.</p>
+
+    <p> Morem ipsum dolor sit amet, conafs
+      sectetur adipisicing elit, sed dofrt
+      Eiusmod tempor.</p>
+
+    <ul class="list-unstyled link-list">
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+    </ul>
+    <br/>
+
+    <p> Morem ipsum dolor sit amet, conafs
+      sectetur adipisicing elit, sed dofrt
+      Eiusmod tempor.</p>
+  </div>
+</section>
