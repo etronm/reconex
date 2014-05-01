@@ -21,6 +21,7 @@ $grayLighter: #bbbbbb;
   margin-top: 45px;
   @include box_sizing;
 }
+
 /* sidebar */
 
 aside {
@@ -79,3 +80,22 @@ aside {
   }
 }
 
+/* microposts */
+
+.articles {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+
+}
+.title {
+  display: block;
+}
+
+.timestamp {
+  color: #969696;
+}

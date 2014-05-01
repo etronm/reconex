@@ -7,7 +7,7 @@ Reconectese::Application.routes.draw do
   resources :contacts, only: [:new, :create]
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-
+  resources :articles, only: [:create, :destroy]
   resources :sections
 
   root to: redirect('/pages/intro.html')

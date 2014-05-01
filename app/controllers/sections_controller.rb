@@ -34,7 +34,7 @@ class SectionsController< ApplicationController
     @section = Section.new(section_params)
     if @section.save
       flash[:success] = "Se ha registrado exitosamente!"
-      redirect_to @section
+      redirect_to sections_path
     else
       flash[:error] = "Por favor verifique la informacion!"
       render :new
