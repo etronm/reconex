@@ -1,19 +1,19 @@
-en:
-  web_site: "Reconnect"
-  web_title1: "Reconnect"
-  web_title2: "your life"
+es:
+  web_site: "Reconectate"
+  web_title1: "Reconecta"
+  web_title2: "tu vida"
 
 #aqui va el menu principal
-  home: "Home"
-  my_account: "My Account"
-  my_profile: "My Profile"
-  settings: "Settings"
-  sign_out: "Sign out"
-  register: "Register"
-  sign_in: "Login"
+  home: "Inicio"
+  my_account: "Mi Cuenta"
+  my_profile: "Mi Perfil"
+  settings: "Configuracion"
+  sign_out: "Salir"
+  register: "Registrar"
+  sign_in: "Ingresar"
 
-  contact: "Contact"
-  administration: "Administration"
-  users: "Users"
-  sections: "Sections"
+  contact: "Contacto"
+  administration: "Administracion"
+  users: "Usuarios"
+  sections: "Secciones"
 

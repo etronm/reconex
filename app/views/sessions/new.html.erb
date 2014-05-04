@@ -1,13 +1,13 @@
-<% content_for :title do %>Login
+<% content_for :title do t(:new_title) %>
 <% end %>
-<% content_for :description do %>Login
+<% content_for :description do t(:new_description)%>
 <% end %>
-<%= render 'layouts/title', icono: "icon-key", titulo: "Login" %>
+<%= render 'layouts/title', icono: "icon-key", titulo: t(:new_banner_description) %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-4 small-centered large-centered column">
-    <h3 class="aligncenter title">Login</h3>
+    <h3 class="aligncenter title"><%= t(:new_title) %></h3>
 
     <div class="form">
       <%= simple_form_for(@session) do |form| %>
@@ -15,12 +15,12 @@
             <%= render 'layouts/error_messages', object: form.object %>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :email, error: false, label: "Email", placeholder: 'Entra tu direccion de email' %>
+                <%= form.input :email, error: false, label: t(:new_email_label), placeholder: t(:new_email_placeholder) %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :password, password_field: true, placeholder: 'Entra tu password', error: false %>
+                <%= form.input :password, password_field: true,label: t(:new_password_label), placeholder:t(:new_password_placeholder), error: false %>
               </div>
             </div>
             <div class="clearfix">
@@ -29,7 +29,7 @@
                   <li>
                     <label>
                       <input id="ch" type="checkbox" name="remember" value="1" checked="checked"/>
-                      <span>Remember me</span></label>
+                      <span><%=t(:new_remember_me)%></span></label>
                   </li>
                 </ul>
               </div>

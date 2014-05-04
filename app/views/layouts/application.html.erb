@@ -3,7 +3,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Reconectese" %></title>
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : i18n.t 'web_site' %>">
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Reconex" %>">
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%# Modernizr is required for Zurb Foundation %>
   <%= javascript_include_tag "vendor/custom.modernizr" %>

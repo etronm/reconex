@@ -1,0 +1,11 @@
+en:
+  new_title: "Login"
+  new_description: "Login"
+  new_banner_description: "Login"
+
+  new_email_label: "Email"
+  new_email_placeholder: "Enter your email address"
+  new_password_label: "Password"
+  new_password_placeholder: "Enter your password"
+
+  new_remember_me: "Remember me"

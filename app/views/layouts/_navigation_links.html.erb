@@ -1,31 +1,31 @@
 <%# add navigation links to this file %>
 <ul class="right">
-  <li class="active"><%= link_to 'Home', root_path %></li>
+  <li class="active"><%= link_to t(:home), root_path %></li>
   <% if signed_in? %>
-      <li class="has-dropdown"><a href="#">Mi Cuenta</a>
+      <li class="has-dropdown"><a href="#"><%= t :my_account %></a>
         <ul class="dropdown">
-          <li><%= link_to 'Mi perfil', user_path(current_user) %></li>
-          <li><%= link_to 'Settings', edit_user_path(current_user) %></li>
+          <li><%= link_to t(:my_profile), user_path(current_user) %></li>
+          <li><%= link_to t(:settings), edit_user_path(current_user) %></li>
 
           <li class="divider"></li>
-          <li><%= link_to 'Salir', signout_path, method: "delete" %></li>
+          <li><%= link_to t(:sign_out), signout_path, method: "delete" %></li>
         </ul>
       </li>
   <% else %>
-      <li><%= link_to 'Registro', new_user_path %></li>
-      <li><%= link_to 'Login', signin_path %></li>
+      <li><%= link_to t(:register), new_user_path %></li>
+      <li><%= link_to t(:sign_in), signin_path %></li>
   <% end %>
 
-  <li><%= link_to 'Contacto', new_contact_path %></li>
+  <li><%= link_to t(:contact), new_contact_path %></li>
 
-<% if signed_in? && is_admin?%>
-  <li class="has-dropdown"><a href="#">Administracion</a>
-    <ul class="dropdown">
-      <li><%= link_to 'Usuarios', users_path %></li>
-      <li><%= link_to 'Secciones', sections_path %></li>
-    </ul>
-  </li>
-<% end %>
+  <% if signed_in? && is_admin? %>
+      <li class="has-dropdown"><a href="#"><%= t(:administration) %></a>
+        <ul class="dropdown">
+          <li><%= link_to t(:users), users_path %></li>
+          <li><%= link_to t(:sections), sections_path %></li>
+        </ul>
+      </li>
+  <% end %>
 
 
   <!--li class="has-dropdown"><a href="#">Portafolio</a>
