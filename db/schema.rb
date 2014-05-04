@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 20140430004023) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "article_sections", force: true do |t|
+  create_table "article_contents", force: true do |t|
+    t.integer  "article_id"
+    t.integer  "section_id"
     t.string   "description"
     t.integer  "status"
     t.integer  "display_order"
@@ -24,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140430004023) do
     t.datetime "updated_at"
   end
 
-  add_index "article_sections", ["display_order"], name: "index_article_sections_on_display_order", using: :btree
+  add_index "article_contents", ["display_order"], name: "index_article_contents_on_display_order", using: :btree
 
   create_table "articles", force: true do |t|
     t.string   "title"

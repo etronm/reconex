@@ -28,7 +28,7 @@ describe "Authentication" do
       #it { should_not have_link('Login', href: signin_path) }
 
       describe "followed by signout" do
-        before { click_link "Salir" }
+        before { click_link I18n.t(:sign_out) }
         it { should have_link('Login') }
       end
     end
@@ -85,6 +85,18 @@ describe "Authentication" do
         end
       end
 
+      describe "in the Articles controller" do
+
+        describe "submitting to the create action" do
+          before { post articles_path }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete article_path(FactoryGirl.create(:article)) }
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
 
       describe "in the Users controller" do
 

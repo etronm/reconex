@@ -7,6 +7,7 @@ describe Article do
     # This code is not idiomatically correct.
     #@article =  Article.new(title: "Lorem ipsum", description:"description", author_id: user.id, status: 0)
     @article = user.articles.build(title: "Lorem ipsum", description:"description", status: 0)
+
   end
 
   subject { @article }
@@ -41,4 +42,7 @@ describe Article do
     before { @article.author_id = nil }
     it { should_not be_valid }
   end
+
+
+
 end

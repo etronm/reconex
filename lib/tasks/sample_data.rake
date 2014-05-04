@@ -12,7 +12,7 @@ namespace :db do
 
 
   task populate_sections: :environment do
-    Section.create!(name: "SeccionAA A",
+    Section.create!(name: "MiSeccionAA A",
                     description: "Descripcion 1",
                     status: 0)
 

@@ -11,6 +11,7 @@ es:
   sign_out: "Salir"
   register: "Registrar"
   sign_in: "Ingresar"
+  sign_in_notice: "Por favor ingrese"
 
   contact: "Contacto"
   administration: "Administracion"

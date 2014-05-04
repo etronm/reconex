@@ -1,6 +1,6 @@
 class ArticleContents < ActiveRecord::Base
-  belongs_to :article
-  belongs_to :section
+  belongs_to :article, class_name: 'Article'
+  belongs_to :section, class_name: 'Section'
 
   validates :description, presence: true, length: {maximum: 3000}
   validates :status, presence: true, numericality: {only_integer: true}, inclusion: 0..1
