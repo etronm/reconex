@@ -38,10 +38,10 @@
               <p class="reset">Recover your
                 <a href="forgot-password.html" title="Recover your username or password">username or password</a></p>
 
-              <p class="reset">New user? <%= link_to "Sign up now!", signup_path %></p>
+              <p class="reset"><%= t(:new_user)%><%= link_to t(:new_user_link), signup_path %></p>
             </div>
             <div class="actions">
-              <%= form.button :submit, 'Login', class: 'submit' %>
+              <%= form.button :submit, t(:sign_in), class: 'submit' %>
             </div>
           </fieldset>
       <% end %>

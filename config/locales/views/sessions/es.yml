@@ -5,7 +5,9 @@ es:
 
   new_email_label: "Email"
   new_email_placeholder: "Indica tu direccion de email"
-  new_password_label: "Password"
-  new_password_placeholder: "Indica tu password"
+  new_password_label: "Clave"
+  new_password_placeholder: "Indica tu clave de acceso"
 
   new_remember_me: "Recuerdame"
+  new_user: "Nuevo por aqui?"
+  new_user_link: "Integrate ahora!"

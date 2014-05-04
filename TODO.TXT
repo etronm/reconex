@@ -1,3 +1,6 @@
 -- FALTA TRADUCIR TODAS LAS PANTALLAS.... 
 -- CONTRATO DE CONFIDENCIALIDAD
--- 
+-- mantener el lenguage seleccionado por el usuario a traves del tiempo, 
+  dar un boton de idiomas para cambiarlo y guardarlo en el cookie
+
+
