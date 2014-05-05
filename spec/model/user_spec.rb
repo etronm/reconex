@@ -4,7 +4,7 @@ describe User do
 
   before do
     @user = User.new(name: "Example User", email: "user@example.com", phone: "1234567890",
-        user_type:0, password:"etronm1", password_confirmation:"etronm1")
+        user_type:0, password:"etronm1", password_confirmation:"etronm1", locale:'en')
   end
 
   subject { @user }
@@ -16,6 +16,8 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:locale) }
+
 
   it { should respond_to(:authenticate) }
   it { should respond_to(:remember_token) }
@@ -34,6 +36,10 @@ describe User do
     it { should be_admin }
   end
 
+  describe "when locale  is not present" do
+    before { @user.locale = " " }
+    it { should_not be_valid }
+  end
 
   ############ user name ####################################
   describe "when name is not present" do
