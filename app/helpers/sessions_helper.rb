@@ -8,6 +8,7 @@ module SessionsHelper
 
   def current_user=(user)
     @current_user = user
+    I18n.locale = (user.nil?)? I18n.default_locale : user.locale
   end
 
   def current_user
