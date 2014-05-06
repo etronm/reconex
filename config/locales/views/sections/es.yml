@@ -1,6 +1,13 @@
-en:
+es:
   section_update_success: "Seccion actualizada!"
   section_destroy_success: "Se ha eliminado exitosamente!"
-  section_create_success: "Se ha registrado exitosamente!"
 
+  section_create_success: "Se ha registrado exitosamente!"
   section_create_error: "Por favor verifique la informacion!"
+
+  section_new_header: "Registra una nueva seccion"
+  section_new_title: "Seccion de Secciones"
+  section_new_description: "Registro de secciones"
+
+  section_form_name: "Nombre"
+  section_form_description: "Descripcion"
