@@ -1,0 +1,6 @@
+en:
+  section_update_success: "Seccion actualizada!"
+  section_destroy_success: "Se ha eliminado exitosamente!"
+  section_create_success: "Se ha registrado exitosamente!"
+
+  section_create_error: "Por favor verifique la informacion!"
