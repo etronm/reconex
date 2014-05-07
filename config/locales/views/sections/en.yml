@@ -9,5 +9,9 @@ en:
   section_new_title: "Sections"
   section_new_description: "New sections"
 
+  section_edit_header: "Enter section details"
+  section_edit_title: "Sections"
+  section_edit_description: "New sections"
+
   section_form_name: "Name"
   section_form_description: "Description"

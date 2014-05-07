@@ -19,3 +19,4 @@ es:
   sections: "Secciones"
 
   save_button_label: "Guardar"
+  cancel_button_label: "Regresar"
