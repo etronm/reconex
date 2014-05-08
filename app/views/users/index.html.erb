@@ -8,13 +8,13 @@
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-8  column">
-    <%= will_paginate @users, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
     <ul class="listado">
       <% @users.each do |user| %>
           <%= render user %>
       <% end %>
     </ul>
-    <%= will_paginate @users, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
   </div>
 </section>
 

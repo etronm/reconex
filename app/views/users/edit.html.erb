@@ -1,14 +1,12 @@
-<% content_for :title do %>Mi perfil
+<% content_for :title do t(:user_title) %>
 <% end %>
-<% content_for :description do %>Mantenimiento de mi perfil
+<% content_for :description do t(:user_description)%>
 <% end %>
-<%= render 'layouts/title', icono: "icon-check-sign", titulo: "Mi Perfil" %>
+<%= render 'layouts/title', icono: "icon-check-sign", titulo: t(:user_profile_title) %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-4 large-offset-2 column">
-    <h3 class="aligncenter title">Actualiza tu perfil</h3>
-
     <div class="form">
       <%= simple_form_for @user do |form| %>
           <fieldset>
@@ -16,37 +14,42 @@
 
             <div class="clearfix">
               <div class="input">
-                <%= form.input :name, error: false %>
+                <%= form.input :name, error: false, label: t(:user_form_name) %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :email, error: false %>
+                <%= form.input :email, error: false, label: t(:user_form_email) %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :password, password_field: true, placeholder: 'Enter your password', error: false %>
+                <%= form.input :password, password_field: true, label: t(:user_form_password), placeholder: t(:user_form_password_ph), error: false %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :password_confirmation, password_field: true, label: "Confirmation", placeholder: 'Please confirm your password', error: false %>
+                <%= form.input :password_confirmation, password_field: true, label: t(:user_form_password_confirmation), placeholder: t(:user_form_password_confirmation_ph), error: false %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :phone, required: false, error: false %>
+                <%= form.input :phone, required: false, error: false, label: t(:user_form_phone) %>
                 <%= form.hidden_field :user_type, value: '3' %>
               </div>
             </div>
             <div class="clearfix">
               <div class="">
-                <%= form.input :locale, :collection => LANGUAGES, required: true %>
+                <%= form.input :locale, :collection => LANGUAGES, required: true, :include_blank => false, label: t(:user_form_locale) %>
               </div>
             </div>
+            <div class="clearfix">
+              <%= link_to root_path do %>
+                  <i class="icon-arrow-left dark-link"></i> <%= t(:cancel_button_label) %>
+              <% end %>
+            </div>
             <div class="actions">
-              <%= form.button :submit, 'Guardar', class: 'submit' %>
+              <%= form.button :submit, t(:save_button_label), class: 'submit' %>
             </div>
           </fieldset>
       <% end %>

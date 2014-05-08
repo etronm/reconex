@@ -29,6 +29,11 @@
                   <i class="icon-arrow-left dark-link"></i> <%= t(:cancel_button_label) %>
               <% end %>
             </div>
+            <div class="clearfix">
+              <%= link_to root_path do %>
+                  <i class="icon-arrow-left dark-link"></i> <%= t(:cancel_button_label) %>
+              <% end %>
+            </div>
             <div class="actions">
               <%= form.button :submit, t(:save_button_label), class: 'submit' %>
             </div>

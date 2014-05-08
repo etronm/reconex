@@ -1,22 +1,22 @@
-<% content_for :title do %>Todas las secciones
+<% content_for :title do t(:sections) %>
 <% end %>
-<% content_for :description do %>Mantenimiento de secciones
+<% content_for :description do t(:sections) %>
 <% end %>
-<%= render 'layouts/title', icono: "icon-leaf", titulo: "Secciones" %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:sections)  %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-8  column">
     <div class="row">
-      <h3><%= create_big_link('icon-edit-sign', 'Crear una seccion nueva', new_section_path) %></h3>
+      <h3><%= create_big_link('icon-edit-sign', t(:section_new_link), new_section_path) %></h3>
     </div>
-    <%= will_paginate @sections, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @sections, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
     <ul class="listado">
       <% @sections.each do |section| %>
           <%= render section %>
       <% end %>
     </ul>
-    <%= will_paginate @sections, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @sections, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
   </div>
   <aside class="small-12 large-4 column ">
   </aside>

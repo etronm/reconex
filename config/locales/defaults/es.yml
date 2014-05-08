@@ -20,3 +20,5 @@ es:
 
   save_button_label: "Guardar"
   cancel_button_label: "Regresar"
+  previous_label: "Previos"
+  next_label: "Siguientes"

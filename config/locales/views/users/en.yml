@@ -1,0 +1,32 @@
+en:
+  user_title: "Users"
+  user_description: "Usuarios"
+  user_profile_title: "My profile"
+
+  user_update_success: "User updated"
+  user_destroy_success: "User has been deleted"
+
+  user_create_success: "User has been created"
+  user_create_error: "Please verify the information"
+
+  user_new_header: "Enter user details"
+  user_new_title: "Users"
+  user_new_description: "New users"
+  user_new_link: "Create a new user"
+
+  user_edit_header: "Enter user details"
+  user_edit_title: "Users"
+  user_edit_description: "New users"
+
+  user_form_name: "Name"
+  user_form_email: "Email Address"
+  user_form_password: "Password"
+  user_form_password_confirmation: "Confirm Password"
+  user_form_password_ph: "Password"
+  user_form_password_confirmation_ph: "Please confirm your password"
+  user_form_phone: "Phone Number"
+  user_form_locale: "Language"
+
+  user_welcome_label: "Welcome to Reconnect your life "
+  user_published_articles: "These are some of your articles:"
+

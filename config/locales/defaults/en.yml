@@ -20,3 +20,5 @@ en:
 
   save_button_label: "Save"
   cancel_button_label: "Return"
+  previous_label: "Previous"
+  next_label: "Next"

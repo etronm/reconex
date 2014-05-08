@@ -8,6 +8,7 @@ es:
   section_new_header: "Registra una nueva seccion"
   section_new_title: "Seccion de Secciones"
   section_new_description: "Registro de secciones"
+  section_new_link: "Crear una seccion nueva"
 
   section_edit_header: "Edite la seccion"
   section_edit_title: "Editar Seccion"
@@ -15,3 +16,4 @@ es:
 
   section_form_name: "Nombre"
   section_form_description: "Descripcion"
+
