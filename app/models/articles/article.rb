@@ -1,5 +1,5 @@
 class Article < ActiveRecord::Base
-  belongs_to :user, class_name: 'User', foreign_key: 'author_id', validate: true
+  belongs_to :user, class_name: 'User', foreign_key: 'author_id', validate: true, counter_cache: true
   has_many :articles_contents
   has_many :sections, through: :articles_contents
 
