@@ -22,3 +22,6 @@ en:
   cancel_button_label: "Return"
   previous_label: "Previous"
   next_label: "Next"
+
+  posted_ago_1: "Posted"
+  posted_ago_2: "ago"

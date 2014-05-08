@@ -22,3 +22,6 @@ es:
   cancel_button_label: "Regresar"
   previous_label: "Previos"
   next_label: "Siguientes"
+
+  posted_ago_1: "Posteado hace"
+  posted_ago_2: ""

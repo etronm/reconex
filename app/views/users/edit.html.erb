@@ -1,6 +1,8 @@
-<% content_for :title do t(:user_title) %>
+<% content_for :title do
+  t(:user_title) %>
 <% end %>
-<% content_for :description do t(:user_description)%>
+<% content_for :description do
+  t(:user_description) %>
 <% end %>
 <%= render 'layouts/title', icono: "icon-check-sign", titulo: t(:user_profile_title) %>
 
@@ -62,12 +64,7 @@
     <div class="row">
       <div class="small-12 columns">
         <%= gravatar_for @user %>
-        <a href="http://gravatar.com/emails">Modificar</a>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <p>Indica el lenguage:</p>
+        <a href="http://gravatar.com/emails"><%= t(:user_modify_avatar) %></a>
       </div>
     </div>
   </div>
