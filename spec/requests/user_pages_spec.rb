@@ -11,15 +11,15 @@ describe "User pages" do
       visit users_path
     end
 
-    it { should have_title('Todos los usuarios') }
-    it { should have_content('Usuarios') }
+    it { should have_title(I18n.t(:user_title)) }
+    it { should have_content(I18n.t(:user_title)) }
 
     describe "pagination" do
 
       before(:all) { 30.times { FactoryGirl.create(:user) } }
       after(:all) { User.delete_all }
 
-      it { should have_selector('ul.pagination') }
+      it { should have_selector('div.pagination') }
 
       # etron, esta prueba no la paso nunca... no se por que.... ??????
       # it "should list each user" do
@@ -33,24 +33,22 @@ describe "User pages" do
 
       it { should_not have_css('icon-trash') }
 
-      # describe "as an admin user" do
-      #   let(:admin) { FactoryGirl.create(:admin) }
-      #   before do
-      #     sign_in admin
-      #     visit users_path
-      #   end
-      #
-      #   it { should have_css('icon-trash') }
-      #
-      #   it "should be able to delete another user" do
-      #     expect do
-      #       click_link('Borrar', match: :first)
-      #     end.to change(User, :count).by(-1)
-      #   end
-      #
-      #   it { should_not have_css('icon-trash') }
-      #
-      # end
+      describe "as an admin user" do
+        let(:admin) { FactoryGirl.create(:admin) }
+        before do
+          sign_in admin
+          visit users_path
+        end
+
+        it { should have_link('', href: edit_user_path(2)) }
+
+        it "should be able to delete another user" do
+          expect do
+            click_link('Borrar', match: :first)
+          end.to change(User, :count).by(-1)
+        end
+
+      end
     end
 
 
@@ -85,15 +83,15 @@ describe "User pages" do
   describe "signup page" do
     before { visit new_user_path }
 
-    it { should have_content('Registro') }
-    it { should have_title('Contactanos') }
+    it { should have_content(I18n.t(:sign_in)) }
+    it { should have_title(I18n.t(:sign_in)) }
   end
 
   describe "signup" do
 
     before { visit signup_path }
 
-    let(:submit) { "Sign Up" }
+    let(:submit) { I18n.t(:sign_in) }
 
     describe "with invalid information" do
       it "should not create a user" do
