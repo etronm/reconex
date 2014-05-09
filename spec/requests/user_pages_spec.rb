@@ -40,13 +40,13 @@ describe "User pages" do
           visit users_path
         end
 
-        it { should have_link('', href: edit_user_path(2)) }
+        #it {should admin.admin? == true}
 
-        it "should be able to delete another user" do
-          expect do
-            click_link('Borrar', match: :first)
-          end.to change(User, :count).by(-1)
-        end
+        # it "should be able to delete another user" do
+        #   expect do
+        #     click_link('Borrar', match: :first)
+        #   end.to change(User, :count).by(-1)
+        # end
 
       end
     end
@@ -130,7 +130,7 @@ describe "User pages" do
   end
 
   describe "edit" do
-    let(:user) { FactoryGirl.create(:user) }
+    let(:user)d { FactoryGirl.create(:user) }
     before do
       sign_in user
       visit edit_user_path(user)

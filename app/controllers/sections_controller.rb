@@ -27,11 +27,12 @@ class SectionsController< ApplicationController
 
   def index
     #@sections = Section.all
-    if !params[:search]?
-      @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
-    else
-      @sections = Section.where("status = 1 and name like '%?%'", params[:search])
-    end   
+    @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
+    # if !params[:search]?
+    #   @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
+    # else
+    #   @sections = Section.where("status = 1 and name like '%?%'", params[:search])
+    # end
   end
 
   def create

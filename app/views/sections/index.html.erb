@@ -1,8 +1,10 @@
-<% content_for :title do t(:sections) %>
+<% content_for :title do
+  t(:sections) %>
 <% end %>
-<% content_for :description do t(:sections) %>
+<% content_for :description do
+  t(:sections) %>
 <% end %>
-<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:sections)  %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:sections) %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
@@ -22,32 +24,34 @@
 
     <form method="get">
       <div class="input">
-        <%= form.input :name, label: t(:section_form_name) %>
+        <input type="text" value=<%= t(:search_label) %>/>
+        <input type="submit" value=<%= t(:search_label) %>/>
       </div>
-      <input type="submit" value=<%=t(:search_label)%> />
     </form>
 
     <%= form_tag '', :method => :get do %>
-      <div class="input">
-        <%= text_field_tag :value_one %>
-        <%= text_field_tag :value_two %>
-        <%= submit_tag t(:search_label) %>
-      </div>
+        <div class="input">
+          <%= text_field_tag :value_one %>
+          <%= text_field_tag :value_two %>
+          <%= submit_tag t(:search_label) %>
+        </div>
     <% end %>
 
     <%= content_tag :div, class: "strong" do %>
-      Hello world!
+        Hello world!
     <% end %>
 
-    <ul>
-      <li class="top-bar_search">
-        <form method="get" action="http://www.sitepoint.com/">
-          <input autocomplete="off" class="searchquery" id="search-box" name="s" placeholder="Search&hellip;" type="text" tabindex="4">
-          <button tabindex="-1"></button>
-        </form>
-      </li>
-    </ul>
-    
+    <div>
+      <ul>
+        <li class="top-bar_search">
+          <form method="get" action="http://www.sitepoint.com/">
+            <input autocomplete="off" class="searchquery" id="search-box" name="s" placeholder="Search&hellip;" type="text" tabindex="4">
+            <button tabindex="-1"></button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
   </aside>
 
 </section>
