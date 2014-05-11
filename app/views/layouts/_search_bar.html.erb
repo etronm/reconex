@@ -1,0 +1,16 @@
+<div class="panel">
+  <%= form_tag where_to_post, :method => :get, id: "search-form" do %>
+      <%= content_tag :div, class: "row collapse" do %>
+          <%= content_tag :div, class: "small-8 columns" do %>
+              <%= text_field_tag :search, params[:search], placeholder: t(:search_label), id: 'search_btn' %>
+          <% end %>
+          <%= content_tag :div, class: "small-2 columns" do %>
+              <%= button_tag "<i class='icon-search'></i>".html_safe, class: 'small' %>
+              <%#= link_to raw("<i class=\"icon-search \"></i>"), '#', :onclick => "$('#search-form').submit()".html_safe %>
+          <% end %>
+          <%= content_tag :div, class: "small-2 columns" do %>
+              <%= link_to "Clear", '#', onclick: "$('#search_btn').val('');".html_safe, class: 'left inline' %>
+          <% end %>
+      <% end %>
+  <% end %>
+</div>

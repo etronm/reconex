@@ -15,7 +15,7 @@
     <div class="span8">
       <% if @user.articles.any? %>
           <h3>Articulos(<%= @user.articles.count %>)</h3>
-          <%= will_paginate @articles, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
+          <%= will_paginate @articles, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
           <ol class="articles">
             <%= render @articles %>
           </ol>

@@ -17,6 +17,7 @@ class SectionsController< ApplicationController
     flash[:success] = t(:section_destroy_success)
     redirect to sections_url
   end
+
   def new
     @section = Section.new
   end
@@ -27,12 +28,12 @@ class SectionsController< ApplicationController
 
   def index
     #@sections = Section.all
-    @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
-    # if !params[:search]?
-    #   @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
-    # else
-    #   @sections = Section.where("status = 1 and name like '%?%'", params[:search])
-    # end
+    #@sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
+    if params[:search]
+      @sections = Section.active.search(params[:search]).paginate(page: params[:page], per_page: 10).order('name')
+    else
+      @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
+    end
   end
 
   def create

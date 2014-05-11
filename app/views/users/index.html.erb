@@ -7,14 +7,19 @@
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-8  column">
-    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
+    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
     <ul class="listado">
       <% @users.each do |user| %>
           <%= render user %>
       <% end %>
     </ul>
-    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
+    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
   </div>
+
+  <aside class="small-12 large-4 column ">
+    <%= render 'layouts/search_bar', where_to_post: users_path %>
+  </aside>
+
 </section>
 
 
