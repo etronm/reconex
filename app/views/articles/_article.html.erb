@@ -1,6 +1,6 @@
 <li>
   <span class="title"><%= article.title %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(article.created_at) %> ago.
+    <%= t(:posted_ago_1) + ' ' + time_ago_in_words(article.created_at) + ' ' +t(:posted_ago_2) %>
   </span>
 </li>

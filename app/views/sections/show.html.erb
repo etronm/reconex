@@ -1,13 +1,13 @@
-<% content_for :title do %>Seccion
+<% content_for :title do t(:section_edit_title)%>
 <% end %>
-<% content_for :description do %>Registro de secciones
+<% content_for :description do t(:section_edit_title)%>
 <% end %>
-<%= render 'layouts/title', icono: "icon-leaf", titulo: "Secciones" %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:section_edit_title) %>
 
 <!-- Start:  section form -->
 <section class="row" id="sections">
   <div class="small-12 large-4 large-offset-2 column">
-    <h3 class="aligncenter title">Registro de secciones nuevas</h3>
+    <h3 class="aligncenter title"><%= t(:section_edit_header) %></h3>
 
     <div class="form">
       <%= simple_form_for @section do |form| %>
@@ -15,17 +15,27 @@
             <%= render 'layouts/error_messages', object: form.object %>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :name , error: false, label: "Nombre de la seccion" %>
+                <%= form.input :name , error: false, label: t(:section_form_name) %>
               </div>
             </div>
             <div class="clearfix">
               <div class="input">
-                <%= form.input :description , error: false , label: "Descripcion" %>
+                <%= form.input :description , as: :text, error: false, label:t(:section_form_description)%>
                 <%= form.hidden_field :status , value: '0' %>
               </div>
             </div>
+            <div class="clearfix">
+              <%= link_to sections_path do %>
+                  <i class="icon-arrow-left dark-link"></i> <%= t(:cancel_button_label) %>
+              <% end %>
+            </div>
+            <div class="clearfix">
+              <%= link_to root_path do %>
+                  <i class="icon-arrow-left dark-link"></i> <%= t(:cancel_button_label) %>
+              <% end %>
+            </div>
             <div class="actions">
-              <%= form.button :submit, 'Guardar', class: 'submit' %>
+              <%= form.button :submit, t(:save_button_label), class: 'submit' %>
             </div>
           </fieldset>
       <% end %>

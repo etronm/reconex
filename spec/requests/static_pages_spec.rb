@@ -10,14 +10,6 @@ describe "Static pages" do
     end
   end
 
-  describe "Help page" do
-
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
-  end
-
   describe "Root page" do
       it "should have the content 'Aquitoy'" do
       visit '/pages/intro.html'

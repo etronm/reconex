@@ -1,0 +1,32 @@
+es:
+  user_title: "Usuarios"
+  user_description: "Usuarios"
+  user_profile_title: "Mi perfil"
+
+  user_update_success: "Usuario actualizado"
+  user_destroy_success: "El usuario se ha eliminado"
+
+  user_create_success: "El usuario se ha creado"
+  user_create_error: "Por favor verifique la informacion"
+
+  user_new_header: "Ingrese los detalles"
+  user_new_title: "Usuarios"
+  user_new_description: "Nuevos usuarios"
+  user_new_link: "Crear usuario nuevo"
+
+  user_edit_header: "Ingrese los detalles"
+  user_edit_title: "Usuarios"
+  user_edit_description: "Usuarios Nuevos"
+
+  user_form_name: "Nombre"
+  user_form_email: "Direccion de email"
+  user_form_password: "Password"
+  user_form_password_confirmation: "Confirma tu Password"
+  user_form_password_ph: "Password"
+  user_form_password_confirmation_ph: "Por favor confirma tu Password"
+  user_form_phone: "Telefono"
+  user_form_locale: "Lenguage"
+
+  user_welcome_label: "Bienvenido a Reconecta tu vida "
+  user_published_articles: "Estos son algunos de los articulos que has publicado:"
+  user_modify_avatar: "Modificar"

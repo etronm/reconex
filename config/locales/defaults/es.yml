@@ -18,3 +18,12 @@ es:
   users: "Usuarios"
   sections: "Secciones"
 
+  save_button_label: "Guardar"
+  create_user_button_label: "Registrar"
+  cancel_button_label: "Regresar"
+  previous_label: "Previos"
+  next_label: "Siguientes"
+
+  posted_ago_1: "Posteado hace"
+  posted_ago_2: ""
+  search_label: "Buscar"

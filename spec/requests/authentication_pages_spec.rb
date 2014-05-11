@@ -7,9 +7,9 @@ describe "Authentication" do
     before { visit signin_path }
 
     describe "with invalid information" do
-      before { click_button "Login" }
+      before { click_button I18n.t(:sign_in) }
 
-      it { should have_content('Login') }
+      it { should have_content(I18n.t(:new_banner_description)) }
       it { should have_selector('div.alert.alert-error') }
 
     end
@@ -17,9 +17,9 @@ describe "Authentication" do
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
       before do
-        fill_in "Email",    with: user.email.upcase
-        fill_in "Password", with: user.password
-        click_button "Login"
+        fill_in I18n.t(:new_email_label), with: user.email.upcase
+        fill_in I18n.t(:new_password_label), with: user.password
+        click_button I18n.t(:sign_in)
       end
 
       it { should have_title(user.name) }
@@ -73,14 +73,14 @@ describe "Authentication" do
       describe "when attempting to visit a protected page" do
         before do
           visit edit_user_path(user)
-          fill_in "Email",    with: user.email
-          fill_in "Password", with: user.password
-          click_button "Login"
+          fill_in I18n.t(:user_form_email), with: user.email.upcase
+          fill_in I18n.t(:user_form_password), with: user.password
+          click_button I18n.t(:sign_in)
         end
 
         describe "after signing in" do
           it "should render the desired protected page" do
-            expect(page).to have_title('Mi perfil')
+            expect(page).to have_title(I18n.t(:user_title))
           end
         end
       end
@@ -102,12 +102,12 @@ describe "Authentication" do
 
         describe "visiting the edit page" do
           before { visit edit_user_path(user) }
-          it { should have_title('Login') }
+          it { should have_title(I18n.t(:sign_in)) }
         end
 
         describe "visiting the user index" do
           before { visit users_path }
-          it { should have_title('Login') }
+          it { should have_title(I18n.t(:sign_in)) }
         end
 
         describe "submitting to the update action" do

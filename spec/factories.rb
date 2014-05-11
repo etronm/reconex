@@ -20,6 +20,7 @@ FactoryGirl.define do
     password_confirmation "foobar"
     phone "1234563378"
     user_type 0
+    locale 'en'
 
     factory :admin do
       user_type 3

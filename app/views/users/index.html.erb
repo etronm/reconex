@@ -1,20 +1,19 @@
-<% content_for :title do %>Todos los usuarios
+<% content_for :title do t(:user_title) %>
 <% end %>
-<% content_for :description do %>Mantenimiento de usuarios
+<% content_for :description do t(:user_description)%>
 <% end %>
-<%= render 'layouts/title', icono: "icon-bug", titulo: "Usuarios" %>
-
+<%= render 'layouts/title', icono: "icon-user", titulo: t(:user_title) %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-8  column">
-    <%= will_paginate @users, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
     <ul class="listado">
       <% @users.each do |user| %>
           <%= render user %>
       <% end %>
     </ul>
-    <%= will_paginate @users, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
   </div>
 </section>
 

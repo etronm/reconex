@@ -12,7 +12,7 @@ describe 'Section pages' do
       visit sections_path
     end
 
-    it { should have_title('Todas las secciones') }
+    it { should have_title(I18n.t(:sections)) }
     it { should have_content('Gracias') }
 
     describe "pagination" do
@@ -20,7 +20,7 @@ describe 'Section pages' do
       before(:all) { 30.times { FactoryGirl.create(:section) } }
       after(:all) { Section.delete_all }
 
-      it { should have_selector('ul.pagination') }
+      it { should have_selector('div.pagination') }
 
     end
 

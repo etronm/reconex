@@ -1,24 +1,57 @@
-<% content_for :title do %>Todas las secciones
+<% content_for :title do
+  t(:sections) %>
 <% end %>
-<% content_for :description do %>Mantenimiento de secciones
+<% content_for :description do
+  t(:sections) %>
 <% end %>
-<%= render 'layouts/title', icono: "icon-leaf", titulo: "Secciones" %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:sections) %>
 
 <!-- Start:  Login Form-->
 <section class="row" id="signup">
   <div class="small-12 large-8  column">
     <div class="row">
-      <h3><%= create_big_link('icon-edit-sign', 'Crear una seccion nueva', new_section_path) %></h3>
+      <h3><%= create_big_link('icon-edit-sign', t(:section_new_link), new_section_path) %></h3>
     </div>
-    <%= will_paginate @sections, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @sections, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
     <ul class="listado">
       <% @sections.each do |section| %>
           <%= render section %>
       <% end %>
     </ul>
-    <%= will_paginate @sections, renderer: FoundationPagination::Rails %>
+    <%= will_paginate @sections, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
   </div>
   <aside class="small-12 large-4 column ">
+
+    <form method="get">
+      <div class="input">
+        <input type="text" value=<%= t(:search_label) %>/>
+        <input type="submit" value=<%= t(:search_label) %>/>
+      </div>
+    </form>
+
+    <%= form_tag '', :method => :get do %>
+        <div class="input">
+          <%= text_field_tag :value_one %>
+          <%= text_field_tag :value_two %>
+          <%= submit_tag t(:search_label) %>
+        </div>
+    <% end %>
+
+    <%= content_tag :div, class: "strong" do %>
+        Hello world!
+    <% end %>
+
+    <div>
+      <ul>
+        <li class="top-bar_search">
+          <form method="get" action="http://www.sitepoint.com/">
+            <input autocomplete="off" class="searchquery" id="search-box" name="s" placeholder="Search&hellip;" type="text" tabindex="4">
+            <button tabindex="-1"></button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
   </aside>
 
 </section>

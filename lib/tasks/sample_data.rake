@@ -31,7 +31,8 @@ namespace :db do
                  phone: "7870009999",
                  password: "foobar",
                  password_confirmation: "foobar",
-                 user_type: 3)
+                 user_type: 3,
+                 locale: 'en')
     99.times do |n|
       name = Faker::Name.name
       email = "example-#{n+1}@railstutorial.org"
@@ -42,7 +43,8 @@ namespace :db do
                    password: password,
                    password_confirmation: password,
                    phone: phone,
-                   user_type: 0)
+                   user_type: 0,
+                   locale: 'en')
     end
 
     Rake::Task["db:populate_sections"].invoke

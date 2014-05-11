@@ -18,3 +18,12 @@ en:
   users: "Users"
   sections: "Sections"
 
+  save_button_label: "Save"
+  create_user_button_label: "Create"
+  cancel_button_label: "Return"
+  previous_label: "Previous"
+  next_label: "Next"
+
+  posted_ago_1: "Posted"
+  posted_ago_2: "ago"
+  search_label: "Search"

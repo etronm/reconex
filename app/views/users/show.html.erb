@@ -2,45 +2,29 @@
   <% provide(:title, @user.name) %>
   <section class="small-12 large-8 column">
     <div id="about" class="row">
-      <div class="title"><h3>Bienvenido a Reconecta tu vida <%= @user.name %>!</h3></div>
+      <div class="title"><h3><%= t(:user_welcome_label) + @user.name %>!</h3></div>
       <div>
         <%= @user.email %>
         <%= gravatar_for @user %>
       </div>
+      <h4><%= t(:user_published_articles) %></h4>
     </div>
     <div class="row">
-      <p>Estos son algunos de los articulos que ha publicado</p>
     </div>
-  </section>
 
-  <section class="small-12 large-8 column">
     <div class="span8">
       <% if @user.articles.any? %>
           <h3>Articulos(<%= @user.articles.count %>)</h3>
+          <%= will_paginate @articles, {previous_label: t(:previous_label), next_label: t(:next_label)} %>
           <ol class="articles">
             <%= render @articles %>
           </ol>
-          <%= will_paginate @articles %>
       <% end %>
     </div>
   </section>
 
   <aside class="small-12 large-4 column ">
-    <section class="categori-list">
-      <h4>Categories</h4>
-      <ul class="list-unstyled nav-list" >
-        <li class="active"><a href="#">Letuer adipi scing</a></li>
-        <li><a href="#">Amet adipi consect sci ng</a></li>
-        <li><a href="#"> dolor adipi sci consect</a></li>
-        <li><a href="#">Letuer consect adipi dolor</a></li>
-        <li><a href="#">Letuer adipi consect sci ng</a></li>
-        <li><a href="#">Letuer dolor adipi sci consect</a></li>
-        <li><a href="#">Zetuer consect adipi dolor</a></li>
-        <li><a href="#">Letuer adipi consect sci ng</a></li>
-        <li><a href="#">Bmet dolor adipi sci consect</a></li>
-        <li><a href="#">Amteret consect adipi dolor</a></li>
-      </ul>
-    </section>
+    <div class="row"></div>
     <section>
       <h4>Blog Tags</h4>
       <ul class="list-unstyled inline-list blog-tags">
@@ -58,6 +42,21 @@
         <li><a href="#"><i class="icon-tags"></i> Electronics</a></li>
         <li><a href="#"><i class="icon-tags"></i> Apple</a></li>
         <li><a href="#"><i class="icon-tags"></i> Canada</a></li>
+      </ul>
+    </section>
+    <section class="categori-list">
+      <h4>Categories</h4>
+      <ul class="list-unstyled nav-list">
+        <li class="active"><a href="#">Letuer adipi scing</a></li>
+        <li><a href="#">Amet adipi consect sci ng</a></li>
+        <li><a href="#"> dolor adipi sci consect</a></li>
+        <li><a href="#">Letuer consect adipi dolor</a></li>
+        <li><a href="#">Letuer adipi consect sci ng</a></li>
+        <li><a href="#">Letuer dolor adipi sci consect</a></li>
+        <li><a href="#">Zetuer consect adipi dolor</a></li>
+        <li><a href="#">Letuer adipi consect sci ng</a></li>
+        <li><a href="#">Bmet dolor adipi sci consect</a></li>
+        <li><a href="#">Amteret consect adipi dolor</a></li>
       </ul>
     </section>
 

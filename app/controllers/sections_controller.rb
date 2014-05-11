@@ -5,7 +5,7 @@ class SectionsController< ApplicationController
   def update
     @section = Section.find(params[:id])
     if @section.update_attributes(section_params)
-      flash[:success] = "Seccion actualizada!"
+      flash[:success] = t(:section_update_success)
       redirect_to sections_path
     else
       render 'edit'
@@ -14,7 +14,7 @@ class SectionsController< ApplicationController
 
   def destroy
     Section.find(params[:id]).destroy
-    flash[:success] = "Se ha eliminado exitosamente!"
+    flash[:success] = t(:section_destroy_success)
     redirect to sections_url
   end
   def new
@@ -27,16 +27,21 @@ class SectionsController< ApplicationController
 
   def index
     #@sections = Section.all
-    @sections = Section.paginate(page: params[:page], per_page: 10).order('name')
+    @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
+    # if !params[:search]?
+    #   @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
+    # else
+    #   @sections = Section.where("status = 1 and name like '%?%'", params[:search])
+    # end
   end
 
   def create
     @section = Section.new(section_params)
     if @section.save
-      flash[:success] = "Se ha registrado exitosamente!"
+      flash[:success] = t(:section_create_success)
       redirect_to sections_path
     else
-      flash[:error] = "Por favor verifique la informacion!"
+      flash[:error] = t(:section_create_error)
       render :new
     end
   end
@@ -44,12 +49,16 @@ class SectionsController< ApplicationController
   private
   def section_params
     params.require(:section).permit(:name, :description, :status)
+
+    #Client.where("created_at >= :start_date AND created_at <= :end_date",
+    # {start_date: params[:start_date], end_date: params[:end_date]})
+
   end
 
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_url, notice: "Por favor ingrese."
+      redirect_to signin_url, notice: t(:sign_in_notice)
     end
   end
 
