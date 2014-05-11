@@ -30,6 +30,11 @@ class User < ActiveRecord::Base
   validates :password, length: {minimum: 6}
 
 
+  def self.search(query)
+    where("upper(name) like upper(?)", "%#{query}%")
+  end
+
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end

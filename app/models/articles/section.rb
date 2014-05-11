@@ -6,4 +6,8 @@ class Section < ActiveRecord::Base
   validates :description, presence: true, length: {maximum: 60}
   validates :status, presence: true, numericality: {only_integer: true}, inclusion: 0..1
 
+  def self.search(query)
+    where("upper(name) like upper(?)", "%#{query}%")
+  end
+
 end
