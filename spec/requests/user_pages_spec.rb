@@ -40,13 +40,11 @@ describe "User pages" do
           visit users_path
         end
 
-        #it {should admin.admin? == true}
-
-        # it "should be able to delete another user" do
-        #   expect do
-        #     click_link('Borrar', match: :first)
-        #   end.to change(User, :count).by(-1)
-        # end
+        it "should be able to delete another user" do
+          expect do
+            click_link('', :href => user_path(user))
+          end.to change(User, :count).by(-1)
+        end
 
       end
     end
@@ -83,15 +81,15 @@ describe "User pages" do
   describe "signup page" do
     before { visit new_user_path }
 
-    it { should have_content(I18n.t(:sign_in)) }
-    it { should have_title(I18n.t(:sign_in)) }
+    it { should have_title(I18n.t(:user_title)) }
+    it { should have_content(I18n.t(:user_profile_title)) }
   end
 
   describe "signup" do
 
     before { visit signup_path }
 
-    let(:submit) { I18n.t(:sign_in) }
+    let(:submit) { I18n.t(:create_user_button_label) }
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -101,11 +99,12 @@ describe "User pages" do
 
     describe "with valid information" do
       before do
-        fill_in "Name", with: "Example User"
-        fill_in "Email", with: "user@example.com"
-        fill_in "Password", with: "foobar"
-        fill_in "Confirmation", with: "foobar"
-        fill_in "Phone", with: "7876199877"
+        fill_in I18n.t(:user_form_name), with: "Example User"
+        fill_in I18n.t(:user_form_email), with: "user@example.com"
+        fill_in I18n.t(:user_form_password), with: "foobar"
+        fill_in I18n.t(:user_form_password_confirmation), with: "foobar"
+        fill_in I18n.t(:user_form_phone), with: "7876199877"
+        find("option[value='en']").click
 
         #hidden fields has to be filled manually, etron
         find(:xpath, "//input[@id='user_user_type']").set "0"
@@ -130,20 +129,20 @@ describe "User pages" do
   end
 
   describe "edit" do
-    let(:user)d { FactoryGirl.create(:user) }
+    let(:user) { FactoryGirl.create(:user) }
     before do
       sign_in user
       visit edit_user_path(user)
     end
 
     describe "page" do
-      it { should have_content("Actualiza tu perfil") }
-      it { should have_title("Mi perfil") }
-      it { should have_link('Modificar', href: 'http://gravatar.com/emails') }
+      it { should have_title(I18n.t(:user_title) )}
+      it { should have_content(I18n.t(:user_profile_title)) }
+      it { should have_link(I18n.t(:user_modify_avatar) , href: 'http://gravatar.com/emails') }
     end
 
     describe "with invalid information 2" do
-      before { click_button "Guardar" }
+      before { click_button I18n.t(:save_button_label) }
 
       it { should have_content('error') }
     end
@@ -152,12 +151,14 @@ describe "User pages" do
       let(:new_name) { "Enriqueto2" }
       let(:new_email) { "new@example.com" }
       before do
-        fill_in "Name", with: new_name
-        fill_in "Email", with: new_email
-        fill_in "Password", with: user.password
-        fill_in "Confirmation", with: user.password
-        fill_in "Phone", with: user.phone
-        click_button "Guardar"
+        fill_in I18n.t(:user_form_name) , with: new_name
+        fill_in I18n.t(:user_form_email), with: new_email
+        fill_in I18n.t(:user_form_password), with: user.password
+        fill_in I18n.t(:user_form_password_confirmation), with: user.password
+        fill_in I18n.t(:user_form_phone), with: user.phone
+        find("option[value='en']").click
+
+        click_button I18n.t(:save_button_label)
       end
 
       it { should have_title(new_name) }

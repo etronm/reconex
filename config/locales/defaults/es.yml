@@ -19,6 +19,7 @@ es:
   sections: "Secciones"
 
   save_button_label: "Guardar"
+  create_user_button_label: "Registrar"
   cancel_button_label: "Regresar"
   previous_label: "Previos"
   next_label: "Siguientes"

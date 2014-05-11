@@ -19,6 +19,7 @@ en:
   sections: "Sections"
 
   save_button_label: "Save"
+  create_user_button_label: "Create"
   cancel_button_label: "Return"
   previous_label: "Previous"
   next_label: "Next"
