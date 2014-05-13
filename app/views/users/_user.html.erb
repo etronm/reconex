@@ -1,8 +1,15 @@
-<li>
-  <%= gravatar_for user, size: 52 %>
-  <h4><%= link_to user.name, user %>
-  <% if current_user.admin? && !current_user?(user) %>
-      <%= create_delete_icon(user) %>
-  <% end %></h4>
-</li>
-
+<div class="small-12 large-4  column">
+  <div class="tm-box aligncenter">
+    <div class="tm-thumbnail">
+      <%= gravatar_for user, size: 70 %>
+    </div>
+    <div class="tm-details">
+      <div>
+        <strong><%= link_to user.name, user %></strong>
+        <% if current_user.admin? && !current_user?(user) %>
+            <%= create_delete_icon(user) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
