@@ -204,7 +204,7 @@ a:hover {
 
 /* Banner Style */
 #banner, .page-title {
-  background: #dedddb url("../img/banner-bg-7.jpg") repeat 0 0 ;
+  background: #dedddb url("banner-bg-7.jpg") repeat 0 0 ;
   border-bottom:8px solid #30DD75;
   margin-bottom: 25px;
 }
@@ -533,27 +533,32 @@ a:hover {
 #error-404 ul{
   margin-left: 25px;
 }
-.tm-thumbnail{
-  position: absolute; left: 50%;
+
+.tm-thumbnail {
+  position: absolute;
+  left: 50%;
 }
 
-.tm-thumbnail img{
-  width:90px;
-  height: 90px;
-  border-radius:90px;
+.tm-thumbnail img {
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
   margin: 0 auto;
   position: relative;
   display: block;
   left: -50%;
-  top:-55px;
+  top: -35px;
 }
-.tm-details{
+
+.tm-details {
   margin-top: 45px;
 }
-.tm-details p:first-letter{
+
+.tm-details p:first-letter {
   font-size: 2.5em;
 }
-.tm-details  blockquote {
+
+.tm-details blockquote {
   font-style: italic;
   line-height: 1.45;
   position: relative;
@@ -562,10 +567,12 @@ a:hover {
   color: #9C9C9C;
   padding: 10px 0 0;
 }
-.tm-details  blockquote i{
+
+.tm-details blockquote i {
   color: #D8D8D8;
-  margin: 0 5px ;
+  margin: 0 5px;
 }
+
 .lt-ie9 .tm-thumbnail{
   position: relative; left: 50%;
 }
@@ -1613,7 +1620,11 @@ button.btn-style-8:hover, button.btn-style-8:focus, .button.btn-style-8:hover, .
 }
 
 
-
-
-
+/* etron, custom styles*/
+.dark-link {
+  color: inherit;
+}
+.red-link {
+  color: #ff0000;
+}
 
