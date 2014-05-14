@@ -533,32 +533,27 @@ a:hover {
 #error-404 ul{
   margin-left: 25px;
 }
-
-.tm-thumbnail {
-  position: absolute;
-  left: 50%;
+.tm-thumbnail{
+  position: absolute; left: 50%;
 }
 
-.tm-thumbnail img {
-  width: 70px;
-  height: 70px;
-  border-radius: 70px;
+.tm-thumbnail img{
+  width:90px;
+  height: 90px;
+  border-radius:90px;
   margin: 0 auto;
   position: relative;
   display: block;
   left: -50%;
-  top: -35px;
+  top:-55px;
 }
-
-.tm-details {
+.tm-details{
   margin-top: 45px;
 }
-
-.tm-details p:first-letter {
+.tm-details p:first-letter{
   font-size: 2.5em;
 }
-
-.tm-details blockquote {
+.tm-details  blockquote {
   font-style: italic;
   line-height: 1.45;
   position: relative;
@@ -567,12 +562,10 @@ a:hover {
   color: #9C9C9C;
   padding: 10px 0 0;
 }
-
-.tm-details blockquote i {
+.tm-details  blockquote i{
   color: #D8D8D8;
-  margin: 0 5px;
+  margin: 0 5px ;
 }
-
 .lt-ie9 .tm-thumbnail{
   position: relative; left: 50%;
 }

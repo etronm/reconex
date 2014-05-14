@@ -2,7 +2,7 @@
 <ul class="right">
   <li class="active"><%= link_to t(:home), root_path %></li>
   <% if signed_in? %>
-      <li class="has-dropdown"><a href="#"><%= t :my_account %></a>
+      <li class="has-dropdown"><a href="#"><%= t(:my_account) %></a>
         <ul class="dropdown">
           <li><%= link_to t(:my_profile), user_path(current_user) %></li>
           <li><%= link_to t(:settings), edit_user_path(current_user) %></li>
