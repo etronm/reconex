@@ -8,14 +8,16 @@
 
 <!-- Start:  Users-->
 <section class="row">
+
   <div class="row">
-    <div class="small-12 large-4 column ">
+    <div class="small-12 large-6 column ">
       <%= will_paginate @users, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
     </div>
-    <div class="small-12 large-4 column ">
+    <div class="small-12 large-6 column ">
       <%= render 'layouts/search_bar', where_to_post: users_path %>
     </div>
   </div>
+
   <div class="testimonials-page" id="testimonials">
     <% @users.each do |user| %>
         <%= render user %>

@@ -1,6 +1,6 @@
 module ApplicationHelper
-  def create_delete_icon(object_to_delete)
-    link_to '<i class="icon-trash icon-border red-link " title="Borrar"></i>'.html_safe, object_to_delete,
+  def create_delete_icon(object_to_delete, align='')
+    link_to "<i class='icon-trash icon-border red-link icon-large #{align} title='Borrar'></i>".html_safe, object_to_delete,
             method: :delete, data: {confirm: "Seguro?"}
   end
 
