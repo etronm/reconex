@@ -2,7 +2,7 @@ Reconectese::Application.routes.draw do
 
   scope "(:locale)", locale: /en|es/ do
 
-    get "static_pages/home"
+    #get "static_pages/home"
     get "static_pages/help"
 
     resources :visitors, only: [:new, :create]
@@ -12,7 +12,8 @@ Reconectese::Application.routes.draw do
     resources :articles, only: [:create, :destroy]
     resources :sections
 
-    root to: redirect('/pages/intro.html')
+    #root to: redirect('/pages/intro.html')
+    root "static_pages#home"
 
 
     match '/signup', to: 'users#new', via: 'get'

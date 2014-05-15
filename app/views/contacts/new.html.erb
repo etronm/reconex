@@ -2,7 +2,7 @@
 <% end %>
 <% content_for :description do %>Envianos cualquier comentario
 <% end %>
-<%= render 'layouts/title', icono:"icon-envelope", titulo:"Contactanos" %>
+<%= render 'layouts/title', icono: "icon-envelope", titulo: "Contactanos" %>
 
 <div class="row">
   <section class="small-12 large-8 column">
@@ -21,19 +21,19 @@
       <h4>Direccion</h4>
       <address>
         <ul class="list-unstyled">
-          <li> <i class="icon-home"></i>Casa del escarabajo y mariposa,
+          <li><i class="icon-home"></i>Casa del escarabajo y mariposa,
             PO Box 6630,
             Bayamon, PR
             00960
           </li>
-          <li> <i class="icon-envelope-alt"></i><a href="mailto:enrique.tron@gmail.com">enrique.tron@gmail.com </a></li>
-          <li> <i class="icon-phone-sign"></i>1(222) 5x86 x97x </li>
+          <li><i class="icon-envelope-alt"></i><a href="mailto:enrique.tron@gmail.com">enrique.tron@gmail.com </a></li>
+          <li><i class="icon-phone-sign"></i>1(222) 5x86 x97x</li>
         </ul>
       </address>
     </div>
     <div class="widget">
 
-      <div class="form" >
+      <div class="form">
         <h4>Contact us</h4>
         <%= simple_form_for @contact do |form| %>
             <%= form.error_notification %>
@@ -49,5 +49,5 @@
 </div>
 
 <% content_for :foot do %>
-    <%= render :file => 'contacts/contact.js.erb'  %>
+    <%= render :file => 'contacts/contact.js.erb' %>
 <% end %>

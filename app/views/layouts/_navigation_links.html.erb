@@ -16,7 +16,7 @@
       <li><%= link_to t(:sign_in), signin_path %></li>
   <% end %>
 
-  <li><%= link_to t(:contact), new_contact_path %></li>
+  <li><%= link_to t(:contact), new_contact_path, data: { no_turbolink: true } %></li>
 
   <% if signed_in? && is_admin? %>
       <li class="has-dropdown"><a href="#"><%= t(:administration) %></a>
