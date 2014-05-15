@@ -2,7 +2,7 @@
   <p>
   <h4><%= link_to section.name, section %>
     <% if current_user.admin? %>
-        <%= create_delete_icon(section) %>
+        <%= create_delete_icon(section,'right') %>
     <% end %>
   </h4>
   </p>
