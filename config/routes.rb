@@ -9,16 +9,18 @@ Reconectese::Application.routes.draw do
     resources :contacts, only: [:new, :create]
     resources :users
     resources :sessions, only: [:new, :create, :destroy]
-    resources :articles, only: [:create, :destroy]
+    resources :articles
     resources :sections
 
     #root to: redirect('/pages/intro.html')
     root "static_pages#home"
 
-
     match '/signup', to: 'users#new', via: 'get'
     match '/signin', to: 'sessions#new', via: 'get'
     match '/signout', to: 'sessions#destroy', via: 'delete'
+    match '/compose', to: 'article#new', via: 'get'
+    match '/review', to: 'article#index', via: 'get'
+
   end
 
 end

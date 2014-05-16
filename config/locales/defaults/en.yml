@@ -17,6 +17,9 @@ en:
   administration: "Administration"
   users: "Users"
   sections: "Sections"
+  articles: "Articles"
+  new_article: "Compose"
+  review_article: "Review"
 
   save_button_label: "Save"
   create_user_button_label: "Create"

@@ -1,6 +1,15 @@
 <%# add navigation links to this file %>
 <ul class="right">
   <li class="active"><%= link_to t(:home), root_path %></li>
+
+  <li class="has-dropdown"><a href="#"><%= t(:articles) %></a>
+    <ul class="dropdown">
+      <li><%= link_to t(:new_article), compose_path %></li>
+      <li><%= link_to t(:review_article), review_path %></li>
+    </ul>
+  </li>
+
+
   <% if signed_in? %>
       <li class="has-dropdown"><a href="#"><%= t(:my_account) %></a>
         <ul class="dropdown">
@@ -16,7 +25,7 @@
       <li><%= link_to t(:sign_in), signin_path %></li>
   <% end %>
 
-  <li><%= link_to t(:contact), new_contact_path, data: { no_turbolink: true } %></li>
+  <li><%= link_to t(:contact), new_contact_path, data: {no_turbolink: true} %></li>
 
   <% if signed_in? && is_admin? %>
       <li class="has-dropdown"><a href="#"><%= t(:administration) %></a>
