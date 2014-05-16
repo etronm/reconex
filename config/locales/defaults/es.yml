@@ -17,6 +17,9 @@ es:
   administration: "Administracion"
   users: "Usuarios"
   sections: "Secciones"
+  articles: "Articulos"
+  new_article: "Crear"
+  review_article: "Revisar"
 
   save_button_label: "Guardar"
   create_user_button_label: "Registrar"

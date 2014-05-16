@@ -3,7 +3,7 @@
 <%= javascript_include_tag 'vendor/underscore-min' %>
 
 <script>
-    function LoadGmaps() {
+function LoadGmaps() {
         var latitude = "18.393186";
         var longitude = "-66.155249";
         var details = "Beetle Inc - Bayamon, Puerto Rico";
@@ -11,18 +11,18 @@
 
         handler.buildMap({ internal: {id: 'etm_map'}}, function () {
         var marker = handler.addMarker({
-            lat: latitude,
-            lng: longitude,
-            infowindow: details
+        lat: latitude,
+        lng: longitude,
+        infowindow: details
         });
         handler.map.centerOn(marker);
         handler.getMap().setZoom(12);
         });
-     }
+        }
 
-    $(function() {
+$(function() {
         LoadGmaps();
-    });
+        });
 
 </script>
 

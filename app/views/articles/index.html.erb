@@ -1,0 +1,34 @@
+<% content_for :title do
+  t(:articles) %>
+<% end %>
+<% content_for :description do
+  t(:articles) %>
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:articles) %>
+
+<!-- Start:  Login Form-->
+<section class="row">
+  <div class="row">
+    <div class="small-12 large-8  column">
+      <h3><%= create_big_link('icon-leaf', t(:section_new_link), new_article_path %></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 large-4 column ">
+      <%= will_paginate @sections, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
+    </div>
+    <div class="small-12 large-4 column ">
+      <%= render 'layouts/search_bar', where_to_post: sections_path %>
+    </div>
+  </div>
+
+  <div class="small-12 large-12 column ">
+    <ul class="listado">
+      <% @sections.each do |section| %>
+          <%= render section %>
+      <% end %>
+    </ul>
+  </div>
+</section>
+<p>Gracias</p>
