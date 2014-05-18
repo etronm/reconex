@@ -40,7 +40,7 @@ describe "Authentication" do
 
     describe "as non-admin user" do
       let(:user) { FactoryGirl.create(:user) }
-      let(:non_admin) { FactoryGirl.create(:user) }
+      let(:non_admin) { FactoryGirl.create(:user, email: "example@railstutorial.org") }
 
       before { sign_in non_admin, no_capybara: true }
 
@@ -51,7 +51,7 @@ describe "Authentication" do
     end
 
     describe "as wrong user" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryGirl.create(:user,email: "wrong2@example.com") }
       let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
       before { sign_in user, no_capybara: true }
 
@@ -68,7 +68,7 @@ describe "Authentication" do
     end
 
     describe "for non-signed-in users" do
-      let(:user) { FactoryGirl.create(:user) }
+      let(:user) { FactoryGirl.create(:user, email: "etron@hotmail.com") }
 
       describe "when attempting to visit a protected page" do
         before do

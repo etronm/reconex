@@ -7,8 +7,8 @@ Reconectese::Application.routes.draw do
 
     resources :visitors, only: [:new, :create]
     resources :contacts, only: [:new, :create]
-    resources :users
     resources :sessions, only: [:new, :create, :destroy]
+    resources :users
     resources :articles
     resources :sections
 
@@ -18,8 +18,8 @@ Reconectese::Application.routes.draw do
     match '/signup', to: 'users#new', via: 'get'
     match '/signin', to: 'sessions#new', via: 'get'
     match '/signout', to: 'sessions#destroy', via: 'delete'
-    match '/compose', to: 'article#new', via: 'get'
-    match '/review', to: 'article#index', via: 'get'
+    match '/compose', to: 'articles#new', via: 'get'
+    match '/review', to: 'articles#index', via: 'get'
 
   end
 
