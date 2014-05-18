@@ -10,16 +10,16 @@
 <section class="row">
   <div class="row">
     <div class="small-12 large-8  column">
-      <h3><%= create_big_link('icon-leaf', t(:section_new_link), new_article_path %></h3>
+      <h3><%= create_big_link('icon-leaf', t(:section_new_link), new_article_path) %></h3>
     </div>
   </div>
 
   <div class="row">
     <div class="small-12 large-4 column ">
-      <%= will_paginate @sections, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
+      <%= will_paginate @articles, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
     </div>
     <div class="small-12 large-4 column ">
-      <%= render 'layouts/search_bar', where_to_post: sections_path %>
+      <%= render 'layouts/search_bar', where_to_post: articles_path %>
     </div>
   </div>
 
@@ -31,4 +31,4 @@
     </ul>
   </div>
 </section>
-<p>Gracias</p>
+<p>Mariposa</p>

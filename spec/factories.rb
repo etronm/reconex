@@ -29,8 +29,11 @@ FactoryGirl.define do
   end
 
   factory :article do
-    title "lorena garcia1"
-    description "algo mas"
+    sequence(:title) { |n| "Articulo #{n}" }
+    sequence(:description ) { |n| "descripcion #{n}" }
+
+    #title "lorena garcia1"
+    #description "algo mas"
     status 0
     user
   end
