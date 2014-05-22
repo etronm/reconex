@@ -12,7 +12,11 @@ FactoryGirl.define do
 
   factory :user do
     sequence(:name) { |n| "Person #{n}" }
-    sequence(:email) { |n| "person_#{n}@example.com" }
+    #sequence(:email) { |n| "person_#{n}@example.com" }
+
+    #name { Faker::Name.first_name + '_' + Faker::Name.last_name }
+    #email { "#{name}_#{rand(3000).to_s}@example.com" }
+    sequence(:email) {|n| Faker::Internet.email("#{Faker::Name.first_name}_#{Faker::Name.last_name}_#{n}_#{rand(9000).to_s}") }
 
     #name     "Michael Hartl"
     #email    "example@railstutorial.org"
@@ -30,7 +34,7 @@ FactoryGirl.define do
 
   factory :article do
     sequence(:title) { |n| "Articulo #{n}" }
-    sequence(:description ) { |n| "descripcion #{n}" }
+    sequence(:description) { |n| "descripcion #{n}" }
 
     #title "lorena garcia1"
     #description "algo mas"
