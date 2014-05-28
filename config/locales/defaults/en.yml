@@ -20,6 +20,7 @@ en:
   articles: "Articles"
   new_article: "Compose"
   review_article: "Review"
+  list_articles: "List"
 
   save_button_label: "Save"
   create_user_button_label: "Create"

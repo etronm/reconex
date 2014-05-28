@@ -20,6 +20,7 @@ es:
   articles: "Articulos"
   new_article: "Crear"
   review_article: "Revisar"
+  list_articles: "Todos"
 
   save_button_label: "Guardar"
   create_user_button_label: "Registrar"
