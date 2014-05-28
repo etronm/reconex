@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: article_contents
+#
+#  id            :integer          not null, primary key
+#  article_id    :integer
+#  section_id    :integer
+#  description   :string(255)
+#  status        :integer
+#  display_order :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+
 class ArticleContents < ActiveRecord::Base
   belongs_to :article, class_name: 'Article'
   belongs_to :section, class_name: 'Section'

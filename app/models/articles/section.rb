@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: sections
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  description :string(255)
+#  status      :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Section < ActiveRecord::Base
   has_many :articles, through: :articles_contents
   scope :active, -> { where(status: 0) }

@@ -1,3 +1,20 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id               :integer          not null, primary key
+#  title            :string(255)
+#  description      :string(255)
+#  status           :integer
+#  author_id        :integer
+#  date_published   :date
+#  comments_enabled :boolean
+#  featured         :boolean
+#  views            :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 class Article < ActiveRecord::Base
   belongs_to :user, class_name: 'User', foreign_key: 'author_id', validate: true
   has_many :articles_contents
