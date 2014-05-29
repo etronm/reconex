@@ -1,0 +1,67 @@
+<% content_for :title do
+  t(:section_new_title) %>
+<% end %>
+<% content_for :description do
+  t(:section_new_title) %>
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:section_new_title) %>
+
+<!-- Start:  Login Form-->
+<section class="row" id="sections">
+  <div class="small-12 large-4 large-offset-2 column">
+    <h3 class="aligncenter title"><%= t(:section_new_header) %></h3>
+
+    <div class="form">
+      <%= simple_form_for @section do |form| %>
+          <fieldset>
+            <%= render 'layouts/error_messages', object: form.object %>
+            <div class="clearfix">
+              <div class="input">
+                <%= form.input :name, error: false, label: t(:section_form_name) %>
+              </div>
+            </div>
+            <div class="clearfix">
+              <div class="input">
+                <%= form.input :description, as: :text, error: false, label: t(:section_form_description) %>
+                <%= form.hidden_field :status, value: '0' %>
+              </div>
+            </div>
+            <div class="clearfix">
+              <%= link_to sections_path do %>
+                  <i class="icon-arrow-left dark-link"></i> <%= t(:cancel_button_label) %>
+              <% end %>
+            </div>
+            <div class="actions">
+              <%= form.button :submit, t(:save_button_label), class: 'submit' %>
+            </div>
+          </fieldset>
+      <% end %>
+    </div>
+
+  </div>
+  <div class="small-12 large-4 column left">
+    <h3>Registrer Now !!!</h3>
+
+    <p> Lorem ipsum dolor sit amet, conafs
+      sectetur adipisicing elit, sed dofrt
+      Eiusmod tempor.Dolor sit amet, conafs
+      sectetur adipisicing elit.</p>
+
+    <p> Morem ipsum dolor sit amet, conafs
+      sectetur adipisicing elit, sed dofrt
+      Eiusmod tempor.</p>
+
+    <ul class="list-unstyled link-list">
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+      <li><i class="icon-ok icon-blue icon-2x"></i> Lorem ipsum dolor sit amet</li>
+    </ul>
+    <br/>
+
+    <p> Morem ipsum dolor sit amet, conafs
+      sectetur adipisicing elit, sed dofrt
+      Eiusmod tempor.</p>
+  </div>
+</section>
