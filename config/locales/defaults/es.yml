@@ -23,6 +23,7 @@ es:
   list_articles: "Todos"
 
   save_button_label: "Guardar"
+  create_button_label: "Crear"
   create_user_button_label: "Registrar"
   cancel_button_label: "Regresar"
   previous_label: "Previos"

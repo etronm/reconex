@@ -23,6 +23,7 @@ en:
   list_articles: "List"
 
   save_button_label: "Save"
+  create_button_label: "Create"
   create_user_button_label: "Create"
   cancel_button_label: "Return"
   previous_label: "Previous"

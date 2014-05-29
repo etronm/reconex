@@ -1,19 +1,19 @@
 es:
-  section_update_success: "Seccion actualizada!"
-  section_destroy_success: "Se ha eliminado exitosamente!"
+  article_update_success: "Articulo actualizad!"
+  article_destroy_success: "Se ha eliminado exitosamente!"
 
-  section_create_success: "Se ha registrado exitosamente!"
-  section_create_error: "Por favor verifique la informacion!"
+  article_create_success: "Se ha registrado exitosamente!"
+  article_create_error: "Por favor verifique la informacion!"
 
-  section_new_header: "Registra una nueva seccion"
-  section_new_title: "Seccion de Secciones"
-  section_new_description: "Registro de secciones"
-  section_new_link: "Crear una seccion nueva"
+  article_new_header: "Registra una nueva seccion"
+  article_new_title: "Registro de Articulo"
+  article_new_description: "Registro de Articulos"
+  article_new_link: "Crear un articulo nuevo"
 
-  section_edit_header: "Edite la seccion"
-  section_edit_title: "Editar Seccion"
-  section_edit_description: "New sections"
+  article_edit_header: "Edite su articulo "
+  article_edit_title: "Editar Articulo"
+  article_edit_description: "Articulo Nuevo"
 
-  section_form_name: "Nombre"
-  section_form_description: "Descripcion"
-
+  article_form_title: "Titulo"
+  article_form_description: "Descripcion"
+  article_title_exist: "Ya existe un articulo con este titulo!"

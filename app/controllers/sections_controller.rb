@@ -27,8 +27,6 @@ class SectionsController< ApplicationController
   end
 
   def index
-    #@sections = Section.all
-    #@sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
     if params[:search]
       @sections = Section.active.search(params[:search]).paginate(page: params[:page], per_page: 10).order('name')
     else
@@ -50,10 +48,6 @@ class SectionsController< ApplicationController
   private
   def section_params
     params.require(:section).permit(:name, :description, :status)
-
-    #Client.where("created_at >= :start_date AND created_at <= :end_date",
-    # {start_date: params[:start_date], end_date: params[:end_date]})
-
   end
 
   def signed_in_user
