@@ -3,10 +3,28 @@ namespace :db do
 
   task populate_articles: :environment do
     users = User.all(limit: 6)
+
     50.times do |n|
       title = "n:#{n}" + Faker::Lorem.sentence(5)
       description =Faker::Lorem.sentence(10)
       users.each { |user| user.articles.create!(title: "u:#{user.id}" + title[0..49], description: description, status: 0) }
+    end
+  end
+
+  task populate_article_contents: :environment do
+    articles = Article.all(limit: 10)
+    articles.each do |article|
+      sections = Section.all(limit: 5)
+      order = 0
+      sections.each do |section|
+        order +=1
+        ArticleContents.create!(
+          article: article,
+          section: section,
+          description:  Faker::Lorem.sentence(15),
+          status: 0,
+          display_order: order)
+      end
     end
   end
 

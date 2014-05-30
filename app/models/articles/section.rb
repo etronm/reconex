@@ -11,7 +11,9 @@
 #
 
 class Section < ActiveRecord::Base
-  has_many :articles, through: :articles_contents
+  has_many :article_contentses, :class_name => 'ArticleContents'
+  has_many :articles, through: :article_contentses
+
   scope :active, -> { where(status: 0) }
 
   validates :name, presence: true, length: {maximum: 30}, uniqueness: {case_sensitive: false}
