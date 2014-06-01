@@ -7,18 +7,21 @@ class ArticlesController< ApplicationController
   end
 
   def show
-    if params[:id]
-      @user = User.find(params[:id])
-      @articles = @user.articles.paginate(page: params[:page], per_page: 10).order('title')
-    end
+    @article = Article.find(params[:id])
   end
 
   def index
     if params[:search]
       @articles = Article.search(params[:search]).paginate(page: params[:page], per_page: 10).order('title')
     else
-      @articles = Article.paginate(page: params[:page], per_page: 10).order('title')
+      if params[:user_id]
+        @user = User.find(params[:user_id])
+        @articles = @user.articles.paginate(page: params[:page], per_page: 10).order('title')
+      else
+        @articles = Article.paginate(page: params[:page], per_page: 10).order('title')
+      end
     end
+
   end
 
   def create

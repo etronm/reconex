@@ -6,29 +6,141 @@
 <% end %>
 <%= render 'layouts/title', icono: "icon-leaf", titulo: t(:articles) %>
 
-<!-- Start:  Login Form-->
-<article class="row">
-  <div class="row">
-    <div class="small-12 large-8  column">
-      <h3><%= create_big_link('icon-leaf', t(:article_new_link), new_article_path) %></h3>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="small-12 large-4 column ">
-      <%= will_paginate @articles, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
-    </div>
-    <div class="small-12 large-4 column ">
-      <%= render 'layouts/search_bar', where_to_post: articles_path %>
-    </div>
-  </div>
+<!-- Start: Blogs List -->
+<div class="row">
+  <section class="small-12 large-8 column">
+    <article class="blog-item">
+      <h2><%= link_to @article.title, @article %></h2>
 
-  <div class="small-12 large-12 column ">
-    <ul class="listado">
-      <% @articles.each do |article| %>
-          <%= render article %>
-      <% end %>
-    </ul>
-  </div>
-</article>
-<p>Mariposa</p>
+      <p><%= @article.description %></p>
+
+      <div class="blog-img-thumb">
+        <%= image_tag "work/img_2.jpg" %>
+      </div>
+
+      <div class="row">
+        <section class="small-12 large-12 column">
+          <div id="faq-block">
+
+            <% @article.article_contentses.each do |ac| %>
+                <div class="docs section-container accordion" data-section="accordion" data-options="one_up: false">
+                  <%= render 'article_contents', article_contents: ac %>
+                </div>
+            <% end %>
+
+          </div>
+        </section>
+      </div>
+
+      <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit posuere erat a ante.</p>
+        <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+      </blockquote>
+
+      <div class="postdetails">
+
+        <ul class="list-unstyled inline-list blog-info">
+          <li><i class="icon-calendar"></i> May 22, 2013</li>
+          <li><i class="icon-pencil"></i> Abc Anderson</li>
+          <li><i class="icon-comments"></i> <a href="#">2 Comments</a></li>
+        </ul>
+
+        <ul class="list-unstyled inline-list blog-tags">
+          <li><a href="#"><i class="icon-tags"></i> Business</a></li>
+          <li><a href="#"><i class="icon-tags"></i> Music</a></li>
+          <li><a href="#"><i class="icon-tags"></i> Internet</a></li>
+          <li><a href="#"><i class="icon-tags"></i> Money</a></li>
+
+        </ul>
+      </div>
+
+    </article>
+    <div class="blog-comments">
+      <h3>Comments</h3>
+      <ol class="blog-comments">
+        <li class="comment">
+          <div class="comment-list">
+            <div class="comment-author">
+              <img alt="#" src="img/team_1.jpg" class="author-img">
+
+              <div class="author-deets">
+                <h3 class="author">Wanda Wilson</h3>
+                <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
+            </div>
+            <div class="comment-text">
+              <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut
+                felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros
+                eu erat. Aliquam erat volutpat. Nam dui mi</p>
+              <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
+            </div>
+          </div>
+          <ul>
+            <li class="comment">
+              <div class="comment-list">
+                <div class="comment-author">
+                  <img alt="#" src="img/team_2.jpg" class="author-img">
+
+                  <div class="author-deets">
+                    <h3 class="author">Wanda Wilson</h3>
+                    <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
+                </div>
+                <div class="comment-text">
+                  <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
+                    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                    eros eu erat. Aliquam erat volutpat. Nam dui mi</p>
+                  <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="comment">
+          <div class="comment-list">
+            <div class="comment-author">
+              <img alt="#" src="img/team_3.jpg" class="author-img">
+
+              <div class="author-deets">
+                <h3 class="author">Wanda Wilson</h3>
+                <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
+            </div>
+            <div class="comment-text">
+              <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut
+                felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros
+                eu erat. Aliquam erat volutpat. Nam dui mi</p>
+              <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <div class="comment-form">
+        <h2>Leave a comment</h2>
+
+        <form class="contactform">
+          <div class="item item-pair">
+            <label for="FullName">Full Name
+              <input type="text" name="FullName" id="FullName" class="cat_textbox" maxlength="255">
+            </label>
+            <label for="EmailAddress">Email Address
+              <input type="text" name="EmailAddress" id="EmailAddress" class="cat_textbox" maxlength="255">
+            </label>
+          </div>
+          <div class="item">
+            <label for="Website">Website
+              <input type="text" name="Website" id="Website" class="cat_textbox" maxlength="255">
+            </label>
+          </div>
+          <div class="item">
+            <label>Comments</label>
+            <textarea cols="10" rows="4" class="cat_listbox"></textarea>
+          </div>
+          <div class="item">
+            <input class="small button secondary" type="submit" value="Submit" id="catwebformbutton">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+</div>
+<!-- End : Blogs List -->
