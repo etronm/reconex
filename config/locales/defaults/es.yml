@@ -21,6 +21,7 @@ es:
   new_article: "Crear"
   review_article: "Revisar"
   list_articles: "Todos"
+  list_my_articles: "Todos mis articulos"
 
   save_button_label: "Guardar"
   create_button_label: "Crear"

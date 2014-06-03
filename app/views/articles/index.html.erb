@@ -9,10 +9,11 @@
 <!-- Start:  Login Form-->
 <article class="row">
   <div class="row">
-    <div class="small-12 large-8  column">
+    <div class="small-12 large-12  column">
       <h3><%= create_big_link('icon-leaf', t(:article_new_link), new_article_path) %></h3>
     </div>
   </div>
+  <br>
 
   <div class="row">
     <div class="small-12 large-4 column ">
@@ -23,12 +24,14 @@
     </div>
   </div>
 
-  <div class="small-12 large-12 column ">
-    <ul class="listado">
-      <% @articles.each do |article| %>
-          <%= render article %>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="small-12 large-12 column ">
+      <ul class="listado">
+        <% @articles.each do |article| %>
+            <%= render article %>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </article>
 <p>Mariposa</p>

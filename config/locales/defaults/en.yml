@@ -21,6 +21,7 @@ en:
   new_article: "Compose"
   review_article: "Review"
   list_articles: "List"
+  list_my_articles: "List my articles"
 
   save_button_label: "Save"
   create_button_label: "Create"
