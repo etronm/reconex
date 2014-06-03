@@ -9,138 +9,198 @@
 
 <!-- Start: Blogs List -->
 <div class="row">
-  <section class="small-12 large-8 column">
-    <article class="blog-item">
-      <h2><%= link_to @article.title, @article %></h2>
+<!-- blog entry -->
+<section class="small-12 large-8 column">
+  <article class="blog-item">
+    <h2><%= link_to @article.title, @article %></h2>
 
-      <p><%= @article.description %></p>
+    <p><%= @article.description %></p>
 
-      <div class="blog-img-thumb">
-        <%= image_tag "work/img_2.jpg" %>
-      </div>
-
-      <div class="row">
-        <section class="small-12 large-12 column">
-          <div id="faq-block">
-
-            <% @article.article_contentses.each do |ac| %>
-                <div class="docs section-container accordion" data-section="accordion" data-options="one_up: false">
-                  <%= render 'article_contents', article_contents: ac %>
-                </div>
-            <% end %>
-
-          </div>
-        </section>
-      </div>
-
-      <blockquote>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit posuere erat a ante.</p>
-        <small>Someone famous <cite title="Source Title">Source Title</cite></small>
-      </blockquote>
-
-      <div class="postdetails">
-
-        <ul class="list-unstyled inline-list blog-info">
-          <li><i class="icon-calendar"></i> May 22, 2013</li>
-          <li><i class="icon-pencil"></i> Abc Anderson</li>
-          <li><i class="icon-comments"></i> <a href="#">2 Comments</a></li>
-        </ul>
-
-        <ul class="list-unstyled inline-list blog-tags">
-          <li><a href="#"><i class="icon-tags"></i> Business</a></li>
-          <li><a href="#"><i class="icon-tags"></i> Music</a></li>
-          <li><a href="#"><i class="icon-tags"></i> Internet</a></li>
-          <li><a href="#"><i class="icon-tags"></i> Money</a></li>
-
-        </ul>
-      </div>
-
-    </article>
-    <div class="blog-comments">
-      <h3>Comments</h3>
-      <ol class="blog-comments">
-        <li class="comment">
-          <div class="comment-list">
-            <div class="comment-author">
-              <img alt="#" src="img/team_1.jpg" class="author-img">
-
-              <div class="author-deets">
-                <h3 class="author">Wanda Wilson</h3>
-                <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
-            </div>
-            <div class="comment-text">
-              <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut
-                felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros
-                eu erat. Aliquam erat volutpat. Nam dui mi</p>
-              <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
-            </div>
-          </div>
-          <ul>
-            <li class="comment">
-              <div class="comment-list">
-                <div class="comment-author">
-                  <img alt="#" src="img/team_2.jpg" class="author-img">
-
-                  <div class="author-deets">
-                    <h3 class="author">Wanda Wilson</h3>
-                    <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
-                </div>
-                <div class="comment-text">
-                  <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
-                    Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
-                    eros eu erat. Aliquam erat volutpat. Nam dui mi</p>
-                  <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-        <li class="comment">
-          <div class="comment-list">
-            <div class="comment-author">
-              <img alt="#" src="img/team_3.jpg" class="author-img">
-
-              <div class="author-deets">
-                <h3 class="author">Wanda Wilson</h3>
-                <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
-            </div>
-            <div class="comment-text">
-              <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut
-                felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros
-                eu erat. Aliquam erat volutpat. Nam dui mi</p>
-              <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
-            </div>
-          </div>
-        </li>
-      </ol>
-      <div class="comment-form">
-        <h2>Leave a comment</h2>
-
-        <form class="contactform">
-          <div class="item item-pair">
-            <label for="FullName">Full Name
-              <input type="text" name="FullName" id="FullName" class="cat_textbox" maxlength="255">
-            </label>
-            <label for="EmailAddress">Email Address
-              <input type="text" name="EmailAddress" id="EmailAddress" class="cat_textbox" maxlength="255">
-            </label>
-          </div>
-          <div class="item">
-            <label for="Website">Website
-              <input type="text" name="Website" id="Website" class="cat_textbox" maxlength="255">
-            </label>
-          </div>
-          <div class="item">
-            <label>Comments</label>
-            <textarea cols="10" rows="4" class="cat_listbox"></textarea>
-          </div>
-          <div class="item">
-            <input class="small button secondary" type="submit" value="Submit" id="catwebformbutton">
-          </div>
-        </form>
-      </div>
+    <div class="blog-img-thumb">
+      <%#= image_tag "work/img_2.jpg" %>
     </div>
 
+    <div class="row">
+      <section class="small-12 large-12 column">
+        <div id="faq-block">
+
+          <% @article.article_contentses.each do |ac| %>
+              <div class="docs section-container accordion" data-section="accordion" data-options="one_up: false">
+                <%= render 'article_contents', article_contents: ac %>
+              </div>
+          <% end %>
+
+        </div>
+      </section>
+    </div>
+
+    <blockquote>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit posuere erat a ante.</p>
+      <small>Someone famous <cite title="Source Title">Source Title</cite></small>
+    </blockquote>
+
+
+
+  </article>
+  <div class="blog-comments">
+    <h3>Comments</h3>
+    <ol class="blog-comments">
+      <li class="comment">
+        <div class="comment-list">
+          <div class="comment-author">
+            <%= image_tag "team_1.jpg", class: "author-img" %>
+            <div class="author-deets">
+              <h3 class="author">Wanda Wilson</h3>
+              <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
+          </div>
+          <div class="comment-text">
+            <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut
+              felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros
+              eu erat. Aliquam erat volutpat. Nam dui mi</p>
+            <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
+          </div>
+        </div>
+        <ul>
+          <li class="comment">
+            <div class="comment-list">
+              <div class="comment-author">
+                <img alt="#" src="img/team_2.jpg" class="author-img">
+
+                <div class="author-deets">
+                  <h3 class="author">Wanda Wilson</h3>
+                  <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
+              </div>
+              <div class="comment-text">
+                <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis.
+                  Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna
+                  eros eu erat. Aliquam erat volutpat. Nam dui mi</p>
+                <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="comment">
+        <div class="comment-list">
+          <div class="comment-author">
+            <img alt="#" src="img/team_3.jpg" class="author-img">
+
+            <div class="author-deets">
+              <h3 class="author">Wanda Wilson</h3>
+              <span class="comment-date"><a href="#">Aug 17th, 2013</a></span></div>
+          </div>
+          <div class="comment-text">
+            <p>ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut
+              felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros
+              eu erat. Aliquam erat volutpat. Nam dui mi</p>
+            <a href="#" class="reply"><i class="icon-reply"></i> Reply</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+    <div class="comment-form">
+      <h2>Leave a comment</h2>
+
+      <form class="contactform">
+        <div class="item item-pair">
+          <label for="FullName">Full Name
+            <input type="text" name="FullName" id="FullName" class="cat_textbox" maxlength="255">
+          </label>
+          <label for="EmailAddress">Email Address
+            <input type="text" name="EmailAddress" id="EmailAddress" class="cat_textbox" maxlength="255">
+          </label>
+        </div>
+        <div class="item">
+          <label for="Website">Website
+            <input type="text" name="Website" id="Website" class="cat_textbox" maxlength="255">
+          </label>
+        </div>
+        <div class="item">
+          <label>Comments</label>
+          <textarea cols="10" rows="4" class="cat_listbox"></textarea>
+        </div>
+        <div class="item">
+          <input class="small button secondary" type="submit" value="Submit" id="catwebformbutton">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</section>
+<!-- end blog entry -->
+<!-- aside -->
+<aside class="small-12 large-4 column blog-aside">
+  <section>
+    <div class="row">
+      <ul id="featured1" data-orbit data-options="timer_speed:5000;">
+        <li>
+          <%= image_tag "work/img_1.jpg" %>
+          <div class="orbit-caption">
+            Caption One. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          </div>
+        </li>
+        <li>
+          <%= image_tag "work/img_2.jpg" %>
+          <div class="orbit-caption">
+            Caption Two. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          </div>
+        </li>
+        <li>
+          <%= image_tag "work/img_3.jpg" %>
+          <div class="orbit-caption">
+            Caption Three. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          </div>
+        </li>
+      </ul>
+    </div>
   </section>
+  <hr>
+  <div class="postdetails">
+
+    <ul class="list-unstyled inline-list blog-info">
+      <li><i class="icon-calendar"></i> May 22, 2013</li>
+      <li><i class="icon-pencil"></i> Abc Anderson</li>
+      <li><i class="icon-comments"></i> <a href="#">2 Comments</a></li>
+    </ul>
+  </div>
+  <hr>
+  <section>
+    <h4>Blog Tags</h4>
+    <ul class="list-unstyled inline-list blog-tags">
+      <li><a href="#"><i class="icon-tags"></i> Business</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Music</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Internet</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Money</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Google</a></li>
+      <li><a href="#"><i class="icon-tags"></i> TV Shows</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Education</a></li>
+      <li><a href="#"><i class="icon-tags"></i> People</a></li>
+      <li><a href="#"><i class="icon-tags"></i> People</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Math</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Photos</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Electronics</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Apple</a></li>
+      <li><a href="#"><i class="icon-tags"></i> Canada</a></li>
+    </ul>
+  </section>
+  <hr>
+  <section class="categori-list">
+    <h4>Categories</h4>
+    <ul class="list-unstyled nav-list">
+      <li class="active"><a href="#">Letuer adipi scing</a></li>
+      <li><a href="#">Amet adipi consect sci ng</a></li>
+      <li><a href="#"> dolor adipi sci consect</a></li>
+      <li><a href="#">Letuer consect adipi dolor</a></li>
+      <li><a href="#">Letuer adipi consect sci ng</a></li>
+      <li><a href="#">Letuer dolor adipi sci consect</a></li>
+      <li><a href="#">Zetuer consect adipi dolor</a></li>
+      <li><a href="#">Letuer adipi consect sci ng</a></li>
+      <li><a href="#">Bmet dolor adipi sci consect</a></li>
+      <li><a href="#">Amteret consect adipi dolor</a></li>
+    </ul>
+  </section>
+
+</aside>
+<!-- aside -->
 </div>
 <!-- End : Blogs List -->

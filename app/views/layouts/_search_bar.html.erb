@@ -5,11 +5,10 @@
               <%= text_field_tag :search, params[:search], placeholder: t(:search_label), id: 'search_btn' %>
           <% end %>
           <%= content_tag :div, class: "small-2 columns" do %>
-              <%= button_tag "<i class='icon-search'></i>".html_safe, class: 'small' %>
-              <%#= link_to raw("<i class=\"icon-search \"></i>"), '#', :onclick => "$('#search-form').submit()".html_safe %>
+              <span class="postfix"><%= link_to raw("<i class=\"icon-search \"></i>"), '#', class: "block", :onclick => "$('#search-form').submit()".html_safe %></span>
           <% end %>
           <%= content_tag :div, class: "small-2 columns" do %>
-              <%= link_to "Clear", '#', onclick: "$('#search_btn').val('');".html_safe, class: 'left inline' %>
+            &nbsp;<%= link_to "Clear", '#', onclick: "$('#search_btn').val('');".html_safe, class: 'right inline' %>
           <% end %>
       <% end %>
   <% end %>
