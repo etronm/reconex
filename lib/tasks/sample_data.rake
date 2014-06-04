@@ -28,6 +28,15 @@ namespace :db do
     end
   end
 
+  task fill_articles_with_tags:          :environment do
+    articles  = Article.all
+    articles.each do |article|
+      5.times do
+        article.tag_list.add(Faker::Lorem.word)
+      end
+      article.save
+    end
+  end
 
   task populate_sections: :environment do
     Section.create!(name: "MiSeccionAA A",

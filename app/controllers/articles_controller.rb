@@ -10,6 +10,14 @@ class ArticlesController< ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def tagged
+    if params[:tag].present?
+      @articles = Article.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 10).order('title')
+    else
+      @articles = Article.all
+    end
+  end
+
   def index
     if params[:search]
       @articles = Article.search(params[:search]).paginate(page: params[:page], per_page: 10).order('title')

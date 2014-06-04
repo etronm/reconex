@@ -1,1 +1,3 @@
-#include ActsAsTaggableOn::TagsHelper
+module ArticlesHelper
+  include ActsAsTaggableOn::TagsHelper
+end
