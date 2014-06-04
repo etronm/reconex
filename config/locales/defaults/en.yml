@@ -22,6 +22,8 @@ en:
   review_article: "Review"
   list_articles: "List"
   list_my_articles: "List my articles"
+  articles_tagged_with: "tagged with"
+  articles_from: "from"
 
   save_button_label: "Save"
   create_button_label: "Create"

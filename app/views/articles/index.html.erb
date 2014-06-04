@@ -4,7 +4,8 @@
 <% content_for :description do
   t(:articles) %>
 <% end %>
-<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:articles) %>
+<% mastitle = params[:user_id]? "#{t(:articles)} #{t(:articles_from)} #{current_user.name}" : "#{t(:articles)}" %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: mastitle %>
 
 <!-- Start:  Login Form-->
 <article class="row">

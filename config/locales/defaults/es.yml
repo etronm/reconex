@@ -21,7 +21,9 @@ es:
   new_article: "Crear"
   review_article: "Revisar"
   list_articles: "Todos"
-  list_my_articles: "Todos mis articulos"
+  list_my_articles: "Articulos "
+  articles_tagged_with: "con el tag"
+  articles_from: "de"
 
   save_button_label: "Guardar"
   create_button_label: "Crear"

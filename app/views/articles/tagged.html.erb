@@ -4,7 +4,7 @@
 <% content_for :description do
   t(:articles) %>
 <% end %>
-<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:articles) %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: "#{t(:articles)} #{t(:articles_tagged_with)} #{params[:tag]}" %>
 
 <!-- Start:  Login Form-->
 <article class="row">
@@ -20,7 +20,7 @@
       <%= will_paginate @articles, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
     </div>
     <div class="small-12 large-4 column ">
-      <%= render 'layouts/search_bar', where_to_post: articles_path %>
+      <%= render 'layouts/search_bar', where_to_post: tagged_path %>
     </div>
   </div>
 
