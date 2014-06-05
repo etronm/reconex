@@ -22,8 +22,11 @@ gem 'bcrypt-ruby', '3.1.2'
 gem 'jquery-turbolinks'
 gem 'faker', '1.1.2'
 gem 'acts-as-taggable-on'
+gem 'rmagick'
+gem 'carrierwave'
+gem 'fog'
 
-#gem 'will_paginate'
+
 gem 'will_paginate-foundation'
 
 

@@ -15,6 +15,7 @@
 class ArticlePhotos < ActiveRecord::Base
   belongs_to :article, class_name: 'Article'
   belongs_to :section, class_name: 'Section'
+  mount_uploader :photo_path, ImageUploader
 
   validates :article, presence: true
   validates :section, presence: true
@@ -23,11 +24,11 @@ class ArticlePhotos < ActiveRecord::Base
   # validates :photo_path, presence: true, allow_nil: false
   # validates :album_url, presence: true, allow_nil: false
 
-  validate :has_one_photo
+  validate :has_one_photo_type
 
   private
 
-  def has_one_photo
+  def has_one_photo_type
     if (photo_content == '' && photo_path == '' && album_url == '')
       errors.add(:base, "Should have one photo type")
     end
