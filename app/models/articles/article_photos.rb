@@ -21,7 +21,7 @@ class ArticlePhotos < ActiveRecord::Base
   validates :section, presence: true
 
   # validates :photo_content, presence: true, allow_nil: false
-  # validates :photo_path, presence: true, allow_nil: false
+  #validates :photo_path, presence: true, allow_nil: false
   # validates :album_url, presence: true, allow_nil: false
 
   validate :has_one_photo_type
