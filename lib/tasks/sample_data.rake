@@ -11,6 +11,16 @@ namespace :db do
     end
   end
 
+  task create_article_photo: :environment do
+    ac = ArticleContents.first
+    ArticlePhotos.create!(
+        article_id: ac.article_id,
+        section_id: ac.section_id,
+        photo_content: 'thi is  atest',
+        photo_path: File.open('/home/etronm/rorprojects/reconex/vendor/assets/img/banner-bg-1.jpg')
+    )
+  end
+
   task populate_article_contents: :environment do
     articles = Article.all(limit: 10)
     articles.each do |article|

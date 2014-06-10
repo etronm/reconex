@@ -20,7 +20,7 @@ class ArticlesController< ApplicationController
 
   def index
     if params[:search]
-      @articles = Article.search(params[:search]).paginate(page: params[:page], per_page: 10).order('title')
+      @articles = Article.where("title like (?)", "%#{params[:search]}%").paginate(page: params[:page], per_page: 10).order('title')
     else
       if params[:user_id]
         @user = User.find(params[:user_id])
