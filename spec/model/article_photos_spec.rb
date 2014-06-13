@@ -8,8 +8,8 @@ describe ArticlePhotos do
 
   before do
     @article_photos = ArticlePhotos.new(article: article, section: section,
-                                        photo_path: 'http://imgs.steps.dragoart.com/how-to-draw-a-hummingbird-and-flower-step-4_1_000000130797_5.gif',
-                                        album_url: '', photo_content: '')
+                                        photo_path: File.open('/home/etronm/rorprojects/reconex/vendor/assets/img/banner-bg-1.jpg'),
+                                        album_url: '', photo_content: 'hola')
   end
 
   subject { @article_photos }
@@ -22,7 +22,7 @@ describe ArticlePhotos do
 
   describe "when photo_path is not present" do
     before {
-      @article_photos.photo_path = ""
+      #@article_photos.photo_path = ""
       @article_photos.photo_content = ""
       @article_photos.album_url = ""
     }

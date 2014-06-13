@@ -56,5 +56,8 @@ class SectionsController< ApplicationController
       redirect_to signin_url, notice: t(:sign_in_notice)
     end
   end
+  def admin_user
+    redirect_to(root_url) unless current_user.admin?
+  end
 
 end

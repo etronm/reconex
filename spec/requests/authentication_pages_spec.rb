@@ -86,6 +86,10 @@ describe "Authentication" do
       end
 
       describe "in the Articles controller" do
+        let(:user) { FactoryGirl.create(:user) }
+        let(:non_admin) { FactoryGirl.create(:non_admin) }
+
+        before { sign_in non_admin, no_capybara: true }
 
         describe "submitting to the create action" do
           before { post articles_path }

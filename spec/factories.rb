@@ -16,6 +16,10 @@ FactoryGirl.define do
     user_type 0
     locale 'en'
 
+    factory :non_admin do
+      user_type 0
+    end
+
     factory :admin do
       user_type 3
     end

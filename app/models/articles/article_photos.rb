@@ -29,7 +29,7 @@ class ArticlePhotos < ActiveRecord::Base
   private
 
   def has_one_photo_type
-    if (photo_content == '' && photo_path == '' && album_url == '')
+    if (photo_content == '' && album_url == '')
       errors.add(:base, "Should have one photo type")
     end
   end
