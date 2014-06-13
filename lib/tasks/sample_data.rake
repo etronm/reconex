@@ -11,6 +11,7 @@ namespace :db do
     end
   end
 
+  #aqui estamos en writing articles .....
   task create_article_photo: :environment do
     ac = ArticleContents.first
     ArticlePhotos.create!(
