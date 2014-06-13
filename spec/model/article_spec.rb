@@ -3,11 +3,10 @@ require 'spec_helper'
 describe Article do
 
   let(:user) { FactoryGirl.create(:user) }
+
   before do
     # This code is not idiomatically correct.
-    #@article =  Article.new(title: "Lorem ipsum", description:"description", author_id: user.id, status: 0)
-    @article = user.articles.build(title: "Lorem ipsum", description:"description", status: 0)
-
+    @article = user.articles.build(title: "Como plantar yesca", description:"Aqui vamos a ver los pasos para plantar yesca", status: 0)
   end
 
   subject { @article }

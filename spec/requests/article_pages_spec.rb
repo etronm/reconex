@@ -8,7 +8,7 @@ describe Articles do
     let(:user) { FactoryGirl.create(:user) }
     before(:each) do
       sign_in user
-      visit review_path
+      visit articles_path
     end
 
     it { should have_title(I18n.t(:articles)) }

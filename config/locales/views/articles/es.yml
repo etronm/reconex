@@ -1,0 +1,19 @@
+es:
+  article_update_success: "Articulo actualizad!"
+  article_destroy_success: "Se ha eliminado exitosamente!"
+
+  article_create_success: "Se ha registrado exitosamente!"
+  article_create_error: "Por favor verifique la informacion!"
+
+  article_new_header: "Registra una nueva seccion"
+  article_new_title: "Registro de Articulo"
+  article_new_description: "Registro de Articulos"
+  article_new_link: "Crear un articulo nuevo"
+
+  article_edit_header: "Edite su articulo "
+  article_edit_title: "Editar Articulo"
+  article_edit_description: "Articulo Nuevo"
+
+  article_form_title: "Titulo"
+  article_form_description: "Descripcion"
+  article_title_exist: "Ya existe un articulo con este titulo!"

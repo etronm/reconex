@@ -12,6 +12,7 @@ Reconectese::Application.routes.draw do
     resources :articles
     resources :sections
 
+
     #root to: redirect('/pages/intro.html')
     root "static_pages#home"
 
@@ -19,7 +20,9 @@ Reconectese::Application.routes.draw do
     match '/signin', to: 'sessions#new', via: 'get'
     match '/signout', to: 'sessions#destroy', via: 'delete'
     match '/compose', to: 'articles#new', via: 'get'
-    match '/review', to: 'articles#index', via: 'get'
+    match '/tagged', to: 'articles#tagged', via: 'get'
+
+    #match '/review', to: 'articles#index', via: 'get'
 
   end
 

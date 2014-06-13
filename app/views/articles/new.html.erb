@@ -1,0 +1,43 @@
+<% content_for :title do
+  t(:article_new_title) %>
+<% end %>
+<% content_for :description do
+  t(:article_new_title) %>
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:article_new_title) %>
+
+<!-- Start:  Login Form-->
+<section class="row" id="articles">
+  <div class="small-12 large-12 column">
+    <h2 class="aligncenter title"><%= t(:article_new_link) %></h2>
+
+    <div class="form">
+      <%= simple_form_for @article do |form| %>
+          <fieldset>
+            <%= render 'layouts/error_messages', object: form.object %>
+
+            <div class="row">
+              <div class="large-12 columns">
+                <h3><%= t(:article_form_title) %></h3>
+                <%= form.input :title, error: false, label: false %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <h3><%= t(:article_form_description) %></h3>
+                <%= form.input :description, as: :text, error: false, label: false %>
+                <%= form.hidden_field :status, value: '0' %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <%= form.button :submit, t(:create_button_label), class: 'submit right' %>
+              </div>
+            </div>
+          </fieldset>
+      <% end %>
+    </div>
+
+  </div>
+
+</section>

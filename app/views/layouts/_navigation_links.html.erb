@@ -5,7 +5,10 @@
   <li class="has-dropdown"><a href="#"><%= t(:articles) %></a>
     <ul class="dropdown">
       <li><%= link_to t(:new_article), compose_path %></li>
-      <li><%= link_to t(:review_article), review_path %></li>
+      <% if signed_in? %>
+          <li><%= link_to t(:review_article), articles_path(:user_id => current_user) %></li>
+      <% end %>
+      <li><%= link_to t(:list_articles), articles_path %></li>
     </ul>
   </li>
 

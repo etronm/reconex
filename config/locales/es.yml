@@ -7,3 +7,6 @@ es:
       x_minutes:
           one: "1 minuto"
           other: "%{count} minutos"
+      less_than_x_minutes:
+          one: "1 segundo"
+          other: "%{count} segundos"

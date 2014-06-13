@@ -17,7 +17,7 @@ ArticleCategory category_id:int article_id:int
 ArticleTag id:int article_id:int tag:string tag_clean;string
 ArticleRelated article_id:int article_related_id:int
 
-ArticlePhotos article_id:int section_id:int photo_path:string album_url:string
+rails generate model ArticlePhotos article_id:integer section_id:integer photo_path:string album_url:string photo_content:string
 
 Comment id:int article_id:int section_id:int user_id:int comment:string status:int is_reply_to_id:int date_posted:date
 CommentUser id:int user_id:int name:string email:string website:string

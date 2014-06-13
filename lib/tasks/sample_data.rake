@@ -3,6 +3,7 @@ namespace :db do
 
   task populate_articles: :environment do
     users = User.all(limit: 6)
+
     50.times do |n|
       title = "n:#{n}" + Faker::Lorem.sentence(5)
       description =Faker::Lorem.sentence(10)
@@ -10,6 +11,42 @@ namespace :db do
     end
   end
 
+  task create_article_photo: :environment do
+    ac = ArticleContents.first
+    ArticlePhotos.create!(
+        article_id: ac.article_id,
+        section_id: ac.section_id,
+        photo_content: 'thi is  atest',
+        photo_path: File.open('/home/etronm/rorprojects/reconex/vendor/assets/img/banner-bg-1.jpg')
+    )
+  end
+
+  task populate_article_contents: :environment do
+    articles = Article.all(limit: 10)
+    articles.each do |article|
+      sections = Section.all(limit: 5)
+      order = 0
+      sections.each do |section|
+        order +=1
+        ArticleContents.create!(
+          article: article,
+          section: section,
+          description:  Faker::Lorem.sentence(15),
+          status: 0,
+          display_order: order)
+      end
+    end
+  end
+
+  task fill_articles_with_tags:          :environment do
+    articles  = Article.all
+    articles.each do |article|
+      5.times do
+        article.tag_list.add(Faker::Lorem.word)
+      end
+      article.save
+    end
+  end
 
   task populate_sections: :environment do
     Section.create!(name: "MiSeccionAA A",

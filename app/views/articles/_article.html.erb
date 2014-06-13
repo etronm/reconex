@@ -1,6 +1,14 @@
 <li>
-  <span class="title"><%= article.title %></span>
-  <span class="timestamp">
+  <p>
+  <h4><%= link_to article.title, article , data: {no_turbolink: true}%>
+    <% if current_user.admin? %>
+        <%= create_delete_icon(article, 'right') %>
+    <% end %>
+  </h4>
+  </p>
+  <p><%= article.description %>
+  </p>
+    <span class="timestamp">
     <%= t(:posted_ago_1) + ' ' + time_ago_in_words(article.created_at) + ' ' +t(:posted_ago_2) %>
   </span>
 </li>

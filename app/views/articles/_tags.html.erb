@@ -1,0 +1,8 @@
+<section>
+  <h4>Tags</h4>
+  <ul class="list-unstyled inline-list blog-tags">
+    <% tags.each do |t| %>
+        <li><%= link_to "<i class='icon-tags'></i>#{t.name}".html_safe, tagged_url(:tag => t.name) %> </li>
+    <% end %>
+  </ul>
+</section>
