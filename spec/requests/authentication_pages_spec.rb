@@ -40,7 +40,7 @@ describe "Authentication" do
 
     describe "as non-admin user" do
       let(:user) { FactoryGirl.create(:user) }
-      let(:non_admin) { FactoryGirl.create(:user, email: "example@railstutorial.org") }
+      let(:non_admin) { FactoryGirl.create(:non_admin) }
 
       before { sign_in non_admin, no_capybara: true }
 
@@ -69,6 +69,7 @@ describe "Authentication" do
 
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user, email: "etron@hotmail.com") }
+      let(:non_admin) { FactoryGirl.create(:non_admin) }
 
       describe "when attempting to visit a protected page" do
         before do
@@ -86,9 +87,6 @@ describe "Authentication" do
       end
 
       describe "in the Articles controller" do
-        let(:user) { FactoryGirl.create(:user) }
-        let(:non_admin) { FactoryGirl.create(:non_admin) }
-
         before { sign_in non_admin, no_capybara: true }
 
         describe "submitting to the create action" do

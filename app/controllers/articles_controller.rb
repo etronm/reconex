@@ -33,18 +33,19 @@ class ArticlesController< ApplicationController
   end
 
   def create
-    @article = Article.new(title: params[:article][:title],
-                           description: params[:article][:description],
-                           status: params[:article][:status],
-                           author_id: current_user.id)
-    if @article.save
-      flash[:success] = t(:article_create_success)
-      redirect_to article_path(current_user.id)
-    else
-      flash[:error] = t(:article_create_error)
-      render :new
+    if params[:article].present?
+      @article = Article.new(title: params[:article][:title],
+                             description: params[:article][:description],
+                             status: params[:article][:status],
+                             author_id: current_user.id)
+      if @article.save
+        flash[:success] = t(:article_create_success)
+        redirect_to article_path(current_user.id)
+      else
+        flash[:error] = t(:article_create_error)
+        render :new
+      end
     end
-
   end
 
   def destroy
@@ -53,7 +54,7 @@ class ArticlesController< ApplicationController
 
   private
   def request_params
-    params.require(:article).permit(:title, :description, :status, :author_id)
+    params.require(:article).permit(:title, :description, :status)
   end
 
   def signed_in_user
@@ -64,7 +65,7 @@ class ArticlesController< ApplicationController
   end
 
   def admin_user
-    redirect_to(signin_url) unless current_user.admin?
+    redirect_to signin_url unless current_user.admin?
   end
 
 end
