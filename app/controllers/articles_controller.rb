@@ -40,7 +40,7 @@ class ArticlesController< ApplicationController
                              author_id: current_user.id)
       if @article.save
         flash[:success] = t(:article_create_success)
-        redirect_to article_path(current_user.id)
+        redirect_to articlesl_path(:user_id => current_user.id)
       else
         flash[:error] = t(:article_create_error)
         render :new
