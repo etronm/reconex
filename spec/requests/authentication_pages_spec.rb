@@ -23,9 +23,6 @@ describe "Authentication" do
       end
 
       it { should have_title(user.name) }
-      #it { should have_link('Mi Perfil',     href: user_path(user)) }
-      #it { should have_link('Sign out',    href: signout_path) }
-      #it { should_not have_link('Login', href: signin_path) }
 
       describe "followed by signout" do
         before { click_link I18n.t(:sign_out) }
@@ -87,7 +84,6 @@ describe "Authentication" do
       end
 
       describe "in the Articles controller" do
-        before { sign_in non_admin, no_capybara: true }
 
         describe "submitting to the create action" do
           before { post articles_path }
