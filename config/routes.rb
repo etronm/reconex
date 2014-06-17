@@ -11,6 +11,7 @@ Reconectese::Application.routes.draw do
     resources :users
     resources :articles
     resources :sections
+    resources :article_contents
 
 
     #root to: redirect('/pages/intro.html')
@@ -22,6 +23,7 @@ Reconectese::Application.routes.draw do
     match '/compose', to: 'articles#new', via: 'get'
     match '/tagged', to: 'articles#tagged', via: 'get'
 
+    #match '/compose_section', to: 'article_contentses#new', via: 'get'
     #match '/review', to: 'articles#index', via: 'get'
 
   end

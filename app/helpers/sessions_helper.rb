@@ -49,4 +49,8 @@ module SessionsHelper
     end
   end
 
+  def admin_user
+    redirect_to signin_url unless current_user.admin?
+  end
+
 end

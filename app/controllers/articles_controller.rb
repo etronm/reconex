@@ -40,7 +40,9 @@ class ArticlesController< ApplicationController
                              author_id: current_user.id)
       if @article.save
         flash[:success] = t(:article_create_success)
-        redirect_to articlesl_path(:user_id => current_user.id)
+        #redirect_to articles_path(:user_id => current_user.id)
+        # redireccionamos a la pagina de secciones... pero primero las pruebas!!
+        redirect_to new_article_content_path(:article_id => @article.id)
       else
         flash[:error] = t(:article_create_error)
         render :new
@@ -57,15 +59,12 @@ class ArticlesController< ApplicationController
     params.require(:article).permit(:title, :description, :status)
   end
 
-  def signed_in_user
-    unless signed_in?
-      store_location
-      redirect_to signin_url, notice: t(:sign_in_notice)
-    end
-  end
+  # def signed_in_user
+  #   unless signed_in?
+  #     store_location
+  #     redirect_to signin_url, notice: t(:sign_in_notice)
+  #   end
+  # end
 
-  def admin_user
-    redirect_to signin_url unless current_user.admin?
-  end
 
 end

@@ -17,3 +17,10 @@ es:
   article_form_title: "Titulo"
   article_form_description: "Descripcion"
   article_title_exist: "Ya existe un articulo con este titulo!"
+
+  article_create_sections: "Crear Secciones"
+  article_create_new_section: "Nueva Seccion"
+
+  article_section_form_description: "Descripcion"
+  article_section_display_order: "Orden"
+  article_section_create_section: "Crear"
