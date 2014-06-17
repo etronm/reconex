@@ -24,6 +24,15 @@ CommentUser id:int user_id:int name:string email:string website:string
 
 Attribute id:int name:string
 Category id:int name:string name_clean:string ^^description:string ^^information:string status:int
-CategoryAttribute id:int category_id:int attribute_id:int 
+CategoryAttribute id:int category_id:int attribute_id:int
 
 
+######################################################################################################################
+# PARA RECREAR LA BASE DE DATOS
+######################################################################################################################
+rake db:drop
+rake db:create
+rake db:migrate
+rake db:populate
+######################################################################################################################
+######################################################################################################################

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: article_content
+# Table name: article_contents
 #
 #  id            :integer          not null, primary key
 #  article_id    :integer
