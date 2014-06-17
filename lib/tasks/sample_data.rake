@@ -13,7 +13,7 @@ namespace :db do
 
   #aqui estamos en writing articles .....
   task create_article_photo: :environment do
-    ac = ArticleContents.first
+    ac = ArticleContent.first
     ArticlePhotos.create!(
         article_id: ac.article_id,
         section_id: ac.section_id,
@@ -29,7 +29,7 @@ namespace :db do
       order = 0
       sections.each do |section|
         order +=1
-        ArticleContents.create!(
+        ArticleContent.create!(
           article: article,
           section: section,
           description:  Faker::Lorem.sentence(15),
@@ -86,6 +86,11 @@ namespace :db do
     end
 
     Rake::Task["db:populate_sections"].invoke
+    Rake::Task["db:populate_articles"].invoke
+    Rake::Task["db:populate_article_contents"].invoke
+    Rake::Task["db:fill_articles_with_tags"].invoke
+    Rake::Task["db:create_article_photo"].invoke
+
 
   end
 end

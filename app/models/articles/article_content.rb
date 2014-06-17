@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: article_contents
+# Table name: article_content
 #
 #  id            :integer          not null, primary key
 #  article_id    :integer
@@ -12,7 +12,7 @@
 #  updated_at    :datetime
 #
 
-class ArticleContents < ActiveRecord::Base
+class ArticleContent < ActiveRecord::Base
   belongs_to :article, class_name: 'Article'
   belongs_to :section, class_name: 'Section'
 

@@ -4,7 +4,7 @@ describe ArticlePhotos do
   let(:user) { FactoryGirl.create(:user) }
   let(:article) { user.articles.build(title: "Lorem ipsum", description: "description", status: 0) }
   let(:section) { FactoryGirl.create(:section) }
-  #let(:article_contents) { ArticleContents.new(article_id: article.id, section_id: section.id, description: "descr", status: 0, display_order: 1) }
+  #let(:article_contents) { ArticleContent.new(article_id: article.id, section_id: section.id, description: "descr", status: 0, display_order: 1) }
 
   before do
     @article_photos = ArticlePhotos.new(article: article, section: section,

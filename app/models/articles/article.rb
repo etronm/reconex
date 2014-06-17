@@ -17,9 +17,9 @@
 
 class Article < ActiveRecord::Base
   belongs_to :user, class_name: 'User', foreign_key: 'author_id', validate: true
-  has_many :article_contentses, :class_name => 'ArticleContents'
+  has_many :article_contents, :class_name => 'ArticleContent'
   has_many :article_photographs, :class_name => 'ArticlePhotos'
-  has_many :sections, :class_name => 'Section', through: :article_contentses
+  has_many :sections, :class_name => 'Section', through: :article_contents
   acts_as_taggable
 
   default_scope {order('created_at DESC')}

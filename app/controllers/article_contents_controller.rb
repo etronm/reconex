@@ -3,7 +3,7 @@ class ArticleContentsController< ApplicationController
   before_action :admin_user, only: :destroy
 
   def new
-    @article_contents = ArticleContents.new
+    @article_content = ArticleContent.new
   end
 
   def index
@@ -12,7 +12,7 @@ class ArticleContentsController< ApplicationController
 
   private
   def request_params
-    params.require(:article_contents).permit(:description, :status, :display_order)
+    params.require(:article_content).permit(:description, :status, :display_order)
   end
 
 end

@@ -11,8 +11,8 @@
 #
 
 class Section < ActiveRecord::Base
-  has_many :article_contentses, :class_name => 'ArticleContents'
-  has_many :articles, through: :article_contentses
+  has_many :article_contents, :class_name => 'ArticleContent'
+  has_many :articles, through: :article_contents
 
   has_many :article_photographs, :class_name => 'ArticlePhotos'
   has_many :articles, through: :article_photographs

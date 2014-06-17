@@ -24,9 +24,9 @@
         <section class="small-12 large-12 column">
           <div id="faq-block">
 
-            <% @article.article_contentses.each do |ac| %>
+            <% @article.article_contents.each do |ac| %>
                 <div class="docs section-container accordion" data-section="accordion" data-options="one_up: false">
-                  <%= render 'article_contents', article_contents: ac %>
+                  <%= render 'article_contents', article_content: ac %>
                 </div>
             <% end %>
 
@@ -147,10 +147,11 @@
           <li>
             <%= image_tag "work/img_3.jpg" %>
             <div class="orbit-caption">
-              Caption Three. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+              Caption Three. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+              egestas.
             </div>
           </li>
-
+        </ul>
       </div>
     </section>
 
