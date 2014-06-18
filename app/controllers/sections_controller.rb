@@ -32,6 +32,10 @@ class SectionsController< ApplicationController
     else
       @sections = Section.active.paginate(page: params[:page], per_page: 10).order('name')
     end
+    respond_to do |format|
+      format.html
+      format.json { render json: @sections }
+    end
   end
 
   def create
@@ -42,6 +46,20 @@ class SectionsController< ApplicationController
     else
       flash[:error] = t(:section_create_error)
       render :new
+    end
+  end
+
+  def search
+    @sections = Section.select([:id, :name]).
+        where("name like :q", q: "%#{params[:q]}%").
+        order('name').paginate(params[:page], per_page: 10) # this is why we need kaminari. of course you could also use limit().offset() instead
+
+    # also add the total count to enable infinite scrolling
+    sections_count = Section.select([:id, :name]).
+        where("name like :q", q: "%#{params[:q]}%").count
+
+    respond_to do |format|
+      format.json { render json: {total: sections_count, sections: @sections.map { |e| {id: e.id, text: "#{e.name} (#{e.description})"} }} }
     end
   end
 

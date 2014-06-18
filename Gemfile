@@ -25,9 +25,10 @@ gem 'acts-as-taggable-on'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
-
-
 gem 'will_paginate-foundation'
+
+gem 'select2-rails'
+#gem 'kaminari'
 
 
 group :development do

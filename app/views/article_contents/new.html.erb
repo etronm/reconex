@@ -15,6 +15,11 @@
       <%= simple_form_for @article_content do |form| %>
           <fieldset>
             <%= render 'layouts/error_messages', object: form.object %>
+            <div class="row">
+                <%= form.hidden_field :section_id, class: 'select2 ajax',
+                        data: {source: sections_path,
+                        placeholder: 'Search for a section'} %>
+            </div>
 
             <div class="row">
               <div class="large-12 columns">
@@ -42,3 +47,7 @@
 
 </section>
 <p>Secciones x articulo</p>
+
+<% content_for :foot do %>
+    <%= render :file => 'article_contents/search_sections.js.erb' %>
+<% end %>

@@ -27,4 +27,8 @@ class Section < ActiveRecord::Base
     where("upper(name) like upper(?)", "%#{query}%")
   end
 
+  def as_json(options)
+    { id: id, text: name }
+  end
+
 end
