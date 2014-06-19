@@ -11,17 +11,25 @@ class ArticleContentsController< ApplicationController
   end
 
   def create
-    @article_content = ArticleContent.new(request_params)
+
+    @article_content = ArticleContent.new(
+        article_id: params[:article_id],
+        section_id: params[:article_content][:section_id],
+        description: params[:article_content][:description],
+        status:params[:article_content][:status],
+        display_order:params[:article_content][:display_order])
     if @article_content.save
       flash[:success] = t(:section_create_success)
+      render :new
     else
       flash[:error] = t(:section_create_error)
+      render :new
     end
   end
 
   private
   def request_params
-    params.require(:article_content).permit(:description, :status, :display_order)
+    params.require(:article_content).permit(:description, :status, :display_order, :section_id, :article_id)
   end
 
 
