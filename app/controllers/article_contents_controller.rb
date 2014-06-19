@@ -15,4 +15,5 @@ class ArticleContentsController< ApplicationController
     params.require(:article_content).permit(:description, :status, :display_order)
   end
 
+
 end

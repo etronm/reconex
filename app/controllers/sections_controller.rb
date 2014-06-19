@@ -49,23 +49,23 @@ class SectionsController< ApplicationController
     end
   end
 
-  def search
-    @sections = Section.select([:id, :name]).
-        where("name like :q", q: "%#{params[:q]}%").
-        order('name').paginate(params[:page], per_page: 10) # this is why we need kaminari. of course you could also use limit().offset() instead
+  def search_section
+    @sections = Section.search(params[:q]).
+        order('name') #.paginate(params[:page], per_page: 10)   # also add the total count to enable infinite scrolling
 
-    # also add the total count to enable infinite scrolling
-    sections_count = Section.select([:id, :name]).
-        where("name like :q", q: "%#{params[:q]}%").count
+    sections_count = Section.search(params[:q]).count
 
     respond_to do |format|
-      format.json { render json: {total: sections_count, sections: @sections.map { |e| {id: e.id, text: "#{e.name} (#{e.description})"} }} }
+      #format.json { render json: {total: sections_count, resources: @sections.map { |e| {id: e.id, text: "#{e.name} (#{e.description})"} }} }
+      format.html
+      format.json { render json: @sections }
     end
   end
 
+
   private
   def section_params
-    params.require(:section).permit(:name, :description, :status)
+    params.require(:section).permit(:name, :description, :status, :q)
   end
 
   def signed_in_user
@@ -74,6 +74,7 @@ class SectionsController< ApplicationController
       redirect_to signin_url, notice: t(:sign_in_notice)
     end
   end
+
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end

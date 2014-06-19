@@ -22,7 +22,7 @@ Reconectese::Application.routes.draw do
     match '/signout', to: 'sessions#destroy', via: 'delete'
     match '/compose', to: 'articles#new', via: 'get'
     match '/tagged', to: 'articles#tagged', via: 'get'
-    match '/search_sections', to: 'sections#search', via: 'get'
+    match '/search_section', to: 'sections#search_section', via: 'get'
 
   end
 

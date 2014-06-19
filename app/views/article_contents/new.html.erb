@@ -16,22 +16,23 @@
           <fieldset>
             <%= render 'layouts/error_messages', object: form.object %>
             <div class="row">
+              <div class="large-6 columns">
+                <h3><%= t(:article_section_form_section) %></h3>
                 <%= form.hidden_field :section_id, class: 'select2 ajax',
-                        data: {source: sections_path,
-                        placeholder: 'Search for a section'} %>
-            </div>
+                                      data: {source: search_section_path, style: 'width: 100%;',
+                                             placeholder: 'Search for a section'} %>
+              </div>
+              <div class="large-6 columns">
+                <h3><%= t(:article_section_display_order) %></h3>
+                <%= form.input :display_order, error: false, label: false %>
 
+              </div>
+            </div>
             <div class="row">
               <div class="large-12 columns">
                 <h3><%= t(:article_section_form_description) %></h3>
                 <%= form.input :description, as: :text, error: false, label: false %>
                 <%= form.hidden_field :status, value: '0' %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-12 columns">
-                <h3><%= t(:article_section_display_order) %></h3>
-                <%= form.input :display_order, error: false, label: false %>
               </div>
             </div>
             <div class="row">
