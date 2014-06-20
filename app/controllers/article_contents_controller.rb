@@ -11,9 +11,8 @@ class ArticleContentsController< ApplicationController
   end
 
   def create
-
     @article_content = ArticleContent.new(
-        article_id: params[:article_id],
+        article_id: params[:article_content][:article_id],
         section_id: params[:article_content][:section_id],
         description: params[:article_content][:description],
         status:params[:article_content][:status],

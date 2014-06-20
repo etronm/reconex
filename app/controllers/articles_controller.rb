@@ -43,6 +43,7 @@ class ArticlesController< ApplicationController
         #redirect_to articles_path(:user_id => current_user.id)
         # redireccionamos a la pagina de secciones... pero primero las pruebas!!
         redirect_to new_article_content_path(:article_id => @article.id)
+        #redirect_to new_article_content_path(:article_id => @article.id)
       else
         flash[:error] = t(:article_create_error)
         render :new

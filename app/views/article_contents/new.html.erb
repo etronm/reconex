@@ -33,6 +33,7 @@
                 <h3><%= t(:article_section_form_description) %></h3>
                 <%= form.input :description, as: :text, error: false, label: false %>
                 <%= form.hidden_field :status, value: '0' %>
+                <%= form.hidden_field :article_id %>
               </div>
             </div>
             <div class="row">
