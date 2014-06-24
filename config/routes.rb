@@ -10,7 +10,10 @@ Reconectese::Application.routes.draw do
     resources :users
     resources :articles
     resources :sections
-    resources :article_contents
+
+    resources :articles   do
+      resources :article_contents
+    end
 
     root "static_pages#home"
 
