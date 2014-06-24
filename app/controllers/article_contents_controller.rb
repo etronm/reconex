@@ -7,20 +7,21 @@ class ArticleContentsController< ApplicationController
   end
 
   def index
-    render
+    @article = Article.find(params[:article_id])
+
   end
 
   def create
+    @article = Article.find(params[:article_id])
     @article_content = ArticleContent.new(
-        article_id: params[:article_content][:article_id],
-        #article_id: Article.find(params[:article_id]).id,
+        article: @article,
         section_id: params[:article_content][:section_id],
         description: params[:article_content][:description],
         status:params[:article_content][:status],
         display_order:params[:article_content][:display_order])
     if @article_content.save
       flash[:success] = t(:section_create_success)
-      render :new
+      redirect_to article_article_contents_path @article
     else
       flash[:error] = t(:section_create_error)
       render :new

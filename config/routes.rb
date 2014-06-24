@@ -11,8 +11,8 @@ Reconectese::Application.routes.draw do
     resources :articles
     resources :sections
 
-    resources :articles   do
-      resources :article_contents
+    resources :articles do
+      resources :article_contents, shallow: true
     end
 
     root "static_pages#home"

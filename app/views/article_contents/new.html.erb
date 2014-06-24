@@ -12,7 +12,7 @@
     <h2 class="aligncenter title"><%= t(:article_new_link) %></h2>
 
     <div class="form">
-      <%= simple_form_for @article_content do |form| %>
+      <%= simple_form_for @article_content, :url =>article_article_contents_path do |form| %>
           <fieldset>
             <%= render 'layouts/error_messages', object: form.object %>
             <div class="row">
@@ -33,8 +33,6 @@
                 <h3><%= t(:article_section_form_description) %></h3>
                 <%= form.input :description, as: :text, error: false, label: false %>
                 <%= form.hidden_field :status, value: '0' %>
-                <%= form.input :article_id, value: params[:art_id ]  %>
-                <input type="text" id="article_id2" value=<%= params[:art_id ] %> />
               </div>
             </div>
             <div class="row">

@@ -1,1 +1,5 @@
 <p>article contents</p>
+<% @article.article_contents.each do |ac| %>
+    <p><%= ac.section.name %></p>
+    <p><%= ac.description %></p>
+<% end %>
