@@ -15,6 +15,8 @@
 class ArticleContent < ActiveRecord::Base
   belongs_to :article, class_name: 'Article'
   belongs_to :section, class_name: 'Section'
+  attr_accessor :new_section_name
+  before_save :create_section_from_name
 
   validates :article, presence: true
   validates :section, presence: true
@@ -23,5 +25,8 @@ class ArticleContent < ActiveRecord::Base
   validates :status, presence: true, numericality: {only_integer: true}, inclusion: 0..1
   validates :display_order, presence: true, numericality: {only_integer: true}
 
+  def create_section_from_name
+    create_section(:name => new_section_name, :description => new_section_name, status: 0) unless new_section_name.blank?
+  end
 
 end

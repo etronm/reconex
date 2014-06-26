@@ -12,17 +12,23 @@
     <h2 class="aligncenter title"><%= t(:article_new_link) %></h2>
 
     <div class="form">
-      <%= simple_form_for @article_content, :url =>article_article_contents_path do |form| %>
+      <%= simple_form_for @article_content, :url => article_article_contents_path do |form| %>
           <fieldset>
             <%= render 'layouts/error_messages', object: form.object %>
             <div class="row">
-              <div class="large-6 columns">
+              <div class="large-8 columns">
                 <h3><%= t(:article_section_form_section) %></h3>
-                <%= form.hidden_field :section_id, class: 'select2 ajax',
-                                      data: {source: search_section_path, style: 'width: 100%;',
-                                             placeholder: 'Search for a section'} %>
+
+                <div class="large-6 columns">
+                  <%= form.hidden_field :section_id, class: 'select2 ajax',
+                                        data: {source: search_section_path,
+                                               placeholder: 'Search for a section'} %>
+                </div>
+                <div class="large-6 columns">
+                  <%= form.text_field :new_section_name, placeholder: "or create one", class: 'rigth' %>
+                </div>
               </div>
-              <div class="large-6 columns">
+              <div class="large-4 columns">
                 <h3><%= t(:article_section_display_order) %></h3>
                 <%= form.input :display_order, error: false, label: false %>
 
