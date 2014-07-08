@@ -1,9 +1,23 @@
 class ArticlesController< ApplicationController
-  before_action :signed_in_user, only: [:index, :create, :destroy]
+  before_action :signed_in_user, only: [:index, :edit, :create, :destroy]
   before_action :admin_user, only: :destroy
+
+  def update
+    @article  = Article.find(params[:id])
+    if @article.update_attributes(request_params)
+      flash[:success] = t(:article_update_success)
+      redirect_to edit_article_content_path(@article)
+    else
+      render 'edit'
+    end
+  end
 
   def new
     @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
   end
 
   def show

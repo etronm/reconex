@@ -18,8 +18,10 @@ es:
   article_form_description: "Descripcion"
   article_title_exist: "Ya existe un articulo con este titulo!"
 
-  article_create_sections: "Crear Secciones"
+  article_create_sections: "Guardar y crear secciones"
   article_create_new_section: "Nueva Seccion"
+  article_edit_sections: "Guardar y editar secciones"
+  article_edit_section: "Editar la seccion de este articulo"
 
   article_section_form_description: "Descripcion"
   article_section_display_order: "Orden"
