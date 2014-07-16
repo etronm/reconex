@@ -26,6 +26,7 @@ gem 'rmagick'
 gem 'carrierwave'
 gem 'fog'
 gem 'will_paginate-foundation'
+gem 'thin'
 
 gem 'select2-rails'
 #gem 'kaminari'
