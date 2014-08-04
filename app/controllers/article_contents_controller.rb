@@ -7,7 +7,7 @@ class ArticleContentsController< ApplicationController
   end
 
   def index
-    @article = Article.find(params[:article_id])
+    #@article = Article.find(params[:article_content][:article_id])
   end
 
   def create
@@ -18,7 +18,7 @@ class ArticleContentsController< ApplicationController
         article: @article,
         section: @section,
         description: params[:article_content][:description],
-        status:params[:article_content][:status],
+        status: params[:article_content][:status],
         display_order: params[:article_content][:display_order])
 
     if @article_content.save

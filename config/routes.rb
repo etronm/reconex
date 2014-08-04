@@ -7,9 +7,7 @@ Reconectese::Application.routes.draw do
     resources :visitors, only: [:new, :create]
     resources :contacts, only: [:new, :create]
     resources :sessions, only: [:new, :create, :destroy]
-    resources :users
-    resources :articles
-    resources :sections
+    resources :users, :articles, :sections
 
     resources :articles do
       resources :article_contents, shallow: true

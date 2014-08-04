@@ -3,9 +3,10 @@ class ArticlesController< ApplicationController
   before_action :admin_user, only: :destroy
 
   def update
-    @article  = Article.find(params[:id])
+    @article = Article.find(params[:id])
     if @article.update_attributes(request_params)
       flash[:success] = t(:article_update_success)
+      #redirect_to edit_article_content_path(@article)
       redirect_to edit_article_content_path(@article)
     else
       render 'edit'
