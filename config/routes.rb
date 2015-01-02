@@ -21,6 +21,7 @@ Reconectese::Application.routes.draw do
     match '/compose', to: 'articles#new', via: 'get'
     match '/tagged', to: 'articles#tagged', via: 'get'
     match '/search_section', to: 'sections#search_section', via: 'get'
+    #match '/article_sections', to: 'articles#sections', via: 'get'
 
   end
 

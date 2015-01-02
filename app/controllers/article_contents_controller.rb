@@ -23,7 +23,8 @@ class ArticleContentsController< ApplicationController
 
     if @article_content.save
       flash[:success] = t(:section_create_success)
-      redirect_to article_article_contents_path @article
+      #redirect_to article_article_contents_path @article
+      render "article_contents/index"
     else
       flash[:error] = t(:section_create_error)
       render :new

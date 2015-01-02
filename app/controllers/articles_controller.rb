@@ -6,8 +6,9 @@ class ArticlesController< ApplicationController
     @article = Article.find(params[:id])
     if @article.update_attributes(request_params)
       flash[:success] = t(:article_update_success)
-      #redirect_to edit_article_content_path(@article)
-      redirect_to edit_article_content_path(@article)
+      #redirect_to  edit_article_content_path(@article)
+      #redirect_to article_article_contents_url(@article)
+      render "article_contents/index"
     else
       render 'edit'
     end

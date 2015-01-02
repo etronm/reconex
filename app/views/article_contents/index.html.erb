@@ -1,6 +1,39 @@
-<p>article contents</p>
-<% @article.article_contents.each do |ac| %>
-    <p><%= ac.section.name %></p>
-    <p><%= ac.description %></p>
+<% content_for :title do
+  t(:sections) %>
 <% end %>
-<%= link_to 'Add another section', new_article_article_content_path(@article) %>
+<% content_for :description do
+  t(:sections) %>
+<% end %>
+<%= render 'layouts/title', icono: "icon-leaf", titulo: t(:sections) %>
+
+<article class="row">
+  <div class="row">
+    <div class="small-12 large-12  column">
+      <h3><%= create_big_link('icon-leaf', t(:article_create_new_section),
+              new_article_article_content_path(@article)) %></h3>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="small-12 large-4 column ">
+      <%= will_paginate @article, {previous_label: t(:previous_label), next_label: t(:next_label), renderer: FoundationPagination::Rails} %>
+    </div>
+    <div class="small-12 large-4 column ">
+      <%= render 'layouts/search_bar', where_to_post: articles_path %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 large-12 column ">
+      <ul class="listado">
+        <% @article.article_contents.each do |ac| %>
+            <p><%= ac.section.name %></p>
+            <p><%= ac.description %></p>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</article>
+<p>Escarabajo</p>
+
